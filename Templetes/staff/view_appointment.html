@@ -1,0 +1,90 @@
+{% extends 'staff/layout.html' %}
+
+{% block content %}
+
+<main class="content">
+<div class="container-fluid p-0">
+
+					
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Appointment requested by clients!!</h5>
+									<!-- <h6 class="card-subtitle text-muted">Appointment requested by clients!!</h6> -->
+								</div>
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" style="width: 100%;">
+										<thead>
+											<tr>
+												<th>Client</th>
+												<th>Case</th>
+												<th>Date</th>
+												<th>Time</th>
+												<th>Status</th>
+												<th> </th>
+												<th> </th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for row in result %}
+
+											<tr>
+												<td>{{row.client}}</td>
+												<td>{{row.cases}}</td>
+												<td>{{row.date}}</td>
+												<td>{{row.time}}</td>
+												<td>{{row.status}}</td>
+												<td><a href="/staff/accept_appointment/{{row.id}}" class="btn btn-primary" style="font-size:0.8rem; background-color: #4bbf73; border-color: #4bbf73;">Approve</a>
+												</td>
+												<td><a href="/staff/reject_appointment/{{row.id}}"class="btn btn-primary" style="font-size:0.8rem;
+												background-color: #d9534f; border-color: #d9534f;">Reject</a></td>
+											</tr>
+
+											{% endfor %}
+											
+										</tbody>
+									</table>
+								</div><br><br>
+
+								<div class="card-body">
+									<h5 class="card-title">Appointment to Take</h5>
+									<table id="datatables-reponsive" class="table table-striped" style="width: 100%;">
+										<thead>
+											<tr>
+												<th>Client</th>
+												<th>Case</th>
+												<th>Date</th>
+												<th>Time</th>
+												<th>Subject</th>
+												<th>Message</th>
+												
+											</tr>
+										</thead>
+										<tbody>
+											{% for row in approved %}
+
+											<tr>
+												<td>{{row.client}}</td>
+												<td>{{row.cases}}</td>
+												<td>{{row.date}}</td>
+												<td>{{row.time}}</td>
+												<td>{{row.subject}}</td>
+												<td >{{row.message}}</td>
+												
+											</tr>
+
+											{% endfor %}
+											
+										</tbody>
+									</table>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+
+				</div></main>
+{% endblock %}

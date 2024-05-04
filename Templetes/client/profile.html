@@ -1,0 +1,56 @@
+{% extends 'client/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="main-content">
+<section class="parallax" data-parallax-background-ratio="0.5"
+            style="background-image:url(' {% static 'client/img/Profile.png' %}');">
+            <div class="opacity-medium "></div>
+            <div class="container">
+                <div class="row align-items-stretch justify-content-center extra-small-screen">
+                    <div
+                        class="col-12 position-relative page-title-large text-center d-flex align-items-center justify-content-center flex-column">
+                        <span
+                            class="d-block text-white opacity-6 alt-font margin-5px-bottom xs-line-height-20px"></span>
+                        <h1 class="alt-font text-white font-weight-500 no-margin-bottom"></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+			 
+
+<div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="widget widget-contact text-center" style="border: 5px solid black; margin-top:60px; margin-bottom: 20px; background-color:lightgray;">
+                        <!-- widget search -->
+                        <h3 class="widget-title text-left" style="font-size: 20px; font-weight: bold; margin-left: 10px; color:black";>Profile Info</h3>
+                        <img src="/media/client/{{result.photo}}" alt="Stacie Hall" style="height: 135px; width: 135px; border-radius: 50%; margin-top: 10px;" />
+                         <h2 class="text-center" style=" padding-top: 15px; font-size: 30px; color:black;">{{result.username}}</h2>
+						 <h4 class="text-center" style="font-size: 20px; font-weight:bold;color:black; margin-top: -30px;" >Client</h4>
+                    </div>
+                    <!-- /.widget search -->
+                    
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="row" >
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <h2 style="font-size: 30px; margin-left:30px; font-weight: bold; margin-top: 80px; color:black;">Name : {{result.client_name}}</h2>
+									<h3 class="mb-0" style="font-size:20px; margin-left:30px; font-weight: bold;" >Address : {{result.address}}</h3>
+									<h4 class="mb-0" style="font-size:20px; margin-left:30px;font-weight: bold;">Contact : {{result.contact}}</h4>
+									<h4 class="mb-0" style="font-size:20px; margin-left:30px;font-weight: bold;">Email : {{result.email}}</h4>
+									<h4 class="mb-0" style="font-size:20px; margin-left:30px;font-weight: bold;">Date Of Birth : {{result.dob}}</h4>
+									<h4 class="mb-0" style="font-size:20px; margin-left:30px;font-weight: bold;">Gender : {{result.gender}}</h4>
+                        
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends 'staff/layout.html' %}
+
+{% block content %}
+
+<main class="content">
+<div class="container-fluid p-0">
+
+					
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Clients </h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of clients</h6>
+								</div>
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" style="width: 100%;">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Username</th>
+												<th>Email</th>
+												<th>Contact</th>
+												<th>Gender</th>
+												
+												
+												<th> </th>
+												<th> </th>
+												<th> </th>
+											</tr>
+										</thead>
+										<tbody>
+
+											{% for row in result %}
+												<tr>
+													<td>{{row.client_name}}</td>
+													<td>{{row.username}}</td>
+													<td>{{row.email}}</td>
+													<td>{{row.contact}}</td>
+													<td>{{row.gender}}</td>
+													
+													
+													<td><a href="/staff/detail_client/{{row.id}}">View</a></td>
+													<td><a href="/staff/client_delete/{{row.id}}">delete</a></td>
+													<td><a href="/staff/client_edit/{{row.id}}">edit</a></td>
+												</tr>
+											{% endfor %}
+											<!-- <tr>
+												<td>1</td>
+												<td>Harsh Shah</td>
+												<td style="max-width:200px; min-width:200px; width: 200px; text-overflow: ellipsis; overflow: hidden;">213, Gajendra Appartment</td>
+												<td>harsh30@gmail.com</td>
+												<td>dgjvhj</td>
+												<td>Male</td>
+												<td>2011/04/25</td>
+												<td>29</td>
+												<td>1234567890</td>
+												<td>Ahmeabad</td>
+												<td>Gujarat</td>
+												<td>382400</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>Jenny Dsouza</td>
+												<td style="max-width:200px; min-width:200px; width: 200px; text-overflow: ellipsis; overflow: hidden;">87, Santi Villa</td>
+												<td>jenny12@gmail.com</td>
+												<td>dgjvhj</td>
+												<td>Female</td>
+												<td>2011/04/25</td>
+												<td>22</td>
+												<td>1234567890</td>
+												<td>Ahmeabad</td>
+												<td>Gujarat</td>
+												<td>382400</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>Mittal Kadiya</td>
+												<td style="max-width:200px; min-width:200px; width: 200px; text-overflow: ellipsis; overflow: hidden;">A-17, Suraksha Awaas</td>
+												<td>mittalkd@gmail.com</td>
+												<td>dgjvhj</td>
+												<td>Female</td>
+												<td>2011/04/25</td>
+												<td>30</td>
+												<td>1234567890</td>
+												<td>Ahmeabad</td>
+												<td>Gujarat</td>
+												<td>382400</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>Vivek Shah</td>
+												<td style="max-width:200px; min-width:200px; width: 200px; text-overflow: ellipsis; overflow: hidden;">27, 2nd floor, Anant Society</td>
+												<td>harsh30@gmail.com</td>
+												<td>dgjvhj</td>
+												<td>Male</td>
+												<td>2011/04/25</td>
+												<td>29</td>
+												<td>1234567890</td>
+												<td>Ahmeabad</td>
+												<td>Gujarat</td>
+												<td>382400</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>Sunitra Mehta</td>
+												<td style="max-width:200px; min-width:200px; width: 200px; text-overflow: ellipsis; overflow: hidden;">213, Gajendra Appartment</td>
+												<td>sunitameh@gmail.com</td>
+												<td>dgjvhj</td>
+												<td>Female</td>
+												<td>2011/04/25</td>
+												<td>29</td>
+												<td>1234567890</td>
+												<td>Ahmeabad</td>
+												<td>Gujarat</td>
+												<td>382400</td>
+											</tr> -->
+											
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div></main>
+{% endblock %}

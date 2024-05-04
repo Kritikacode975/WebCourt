@@ -1,0 +1,170 @@
+{% extends 'client/layout.html' %}
+{% load static %}
+{% block content %}
+
+ <div class="main-content">
+        <!-- start page title -->
+        <section class="parallax" data-parallax-background-ratio="0.5"
+            style="background-image:url('{% static 'client//img//cases.jpg' %}');">
+            <div class="opacity-medium "></div>
+            <div class="container">
+                <div class="row align-items-stretch justify-content-center extra-small-screen">
+                    <div
+                        class="col-12 position-relative page-title-large text-center d-flex align-items-center justify-content-center flex-column">
+                        <span
+                            class="d-block text-white opacity-6 alt-font margin-5px-bottom xs-line-height-20px"></span>
+                        <h1 class="alt-font text-white font-weight-500 no-margin-bottom">Your Cases</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end page title -->
+        <!-- start section -->
+        <section class="half-section wow animate__fadeIn">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2">
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.6s">
+                        <div class="feature-box padding-1-half-rem-all sm-padding-2-rem-tb xs-padding-4-rem-lr">
+                            <div class="feature-box-icon">
+                                <i
+                                    class="line-icon-Talk-Man icon-medium text-extra-dark-gray margin-35px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray">CLIENT
+                                    SATISFACTION</span>
+                                <p>Your satisfaction is our top priority in every case.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.2s">
+                        <div
+                            class="feature-box padding-1-half-rem-all sm-padding-2-rem-tb xs-padding-4-rem-lr md-margin-15px-bottom">
+                            <div class="feature-box-icon">
+                                <i
+                                    class="line-icon-Handshake icon-medium text-extra-dark-gray margin-35px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray">
+                                    ETHICAL CONDUCT</span>
+                                <p>We follow high ethical standards in practicing law.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.4s">
+                        <div
+                            class="feature-box padding-1-half-rem-all sm-padding-2-rem-tb xs-padding-4-rem-lr sm-margin-15px-bottom">
+                            <div class="feature-box-icon">
+                                <i
+                                    class="line-icon-Calendar icon-medium text-extra-dark-gray margin-35px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray">
+                                    REGULAR UPDATES</span>
+                                <p>You'll receive consistent information on your case.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                     <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.6s">
+                        <div class="feature-box padding-1-half-rem-all sm-padding-2-rem-tb xs-padding-4-rem-lr">
+                            <div class="feature-box-icon">
+                                <i
+                                    class="line-icon-Dollar icon-medium text-extra-dark-gray margin-35px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray">FAIR
+                                    PRICING</span>
+                                <p>Our fees are reasonable and affordable.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="bg-light-gray half-section wow animate__fadeIn">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 text-center margin-5-rem-bottom sm-margin-3-rem-bottom">
+                        <h3 class="alt-font text-extra-dark-gray font-weight-600 letter-spacing-minus-1px">Your Cases   
+                        </h3>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-12">
+                        <!-- start services item -->
+                         {% for res in client %}
+                        {% if res.user_id == user.id %}
+                        {% for row in cases %}
+                        {% if row.client_id == res.id %}
+                        <div
+                            class="col-12 padding-1-rem-all wow animate__fadeIn">
+                            <div
+                                class="feature-box text-start box-shadow-large box-shadow-double-large-hover bg-white padding-3-rem-all lg-padding-3-rem-all md-padding-4-half-rem-all">
+                                <div class="feature-box-content w-100">
+                                    <span class="margin-15px-bottom d-block text-extra-medium">{{row.id}}</span>
+                                    <h6 class="alt-font font-weight-600 d-block text-extra-dark-gray">{{row.case_type}}
+                                    </h6>
+                                    <!-- <p>Lorem ipsum is simply dummy text of the printing typesetting lorem ipsum been
+                                        dummy
+                                        text.</p>
+                                    <div class="h-1px bg-medium-gray margin-25px-bottom w-100"></div>
+                                    <a class="text-small font-weight-500 text-uppercase alt-font d-block text-extra-dark-gray"
+                                        href="case_details.html">More info<i
+                                            class="feather icon-feather-arrow-right icon-extra-small float-end"></i></a> -->
+                                             <div class="container" style="border: 2px solid gray; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                            <h3 class="mb-4 text-uppercase">{{row.title}}</h3>
+                                            <label>Description : {{row.description}}</label><br>
+                                            <label>Court : {{row.court}}</label><br>
+                                            <label>Judge : {{row.judge}}</label><br>
+                                            
+                                        </div>   
+                                        <div class="col-lg-4" >
+                                            <br>
+                                            <a href="/client/view_details/{{row.id}}" class="btn btn-default " style="margin-top:50px;
+                                            margin-left:100px;
+                                            width:150px;
+                                            border-radius:5px;
+                                            height:50px;
+                                            line-height: 39px;
+                                            background-color:blue;
+                                            color:white;">View Details</a>
+                                        </div> 
+                                </div>
+                    </div>
+                                </div>
+                                <div class="feature-box-overlay bg-white"></div>
+                            </div>
+                        </div>
+                         {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+
+                        <!-- end services item -->
+                        <!-- start services item -->
+                        <!-- end services item -->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+    </div>
+
+
+{% endblock %}

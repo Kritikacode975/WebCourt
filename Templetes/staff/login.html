@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slide Login Form Flat Responsive Widget Template :: w3layouts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'adminlawyer/loginCss/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        .error {
+            color: red;
+        }
+        input {
+            outline: none;
+        }
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- main -->
+    <div class="w3layouts-main">
+        <div class="bg-layer">
+            <h1 style="padding-top: 170px;">Staff Login</h1>
+            {% if messages %}
+            <div class="messages" style="height: 80px;">
+                {% for message in messages %}
+                <div style="font-size: 25px; list-style: none; line-height: 80px; font-weight:lighter; color: red;"
+                    class="text-center" {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="header-main">
+                <div class="header-left-bottom">
+                    <form action="/staff/login_check" method="post">
+                        {% csrf_token %}
+                        <div class="icon1 username" style="border: 1px white solid;">
+                            <input type="text" id="username" name="username" placeholder="e.g. kritika123"
+                                pattern="[a-zA-Z0-9]{4,20}" style="margin: 0; padding: 0;" required="" />
+                        </div>
+                        <div id="errormsg" class="error"></div>
+                        <div class="icon1 pass" style="border: 1px white solid;">
+                            <input type="password" id="password" name="password" pattern="[a-zA-Z0-9]{8,20}"
+                                placeholder="e.g. kritika123" style="margin: 0; padding: 0; " required="" />
+                        </div>
+                        <div id="passworderror" class="error"></div>
+                        <div class="login-check">
+                            <label class="checkbox">
+                                <input type="checkbox" class="form-check-input" onclick="myFunction()"><i> </i> Show
+                                Password
+                            </label>
+                        </div>
+                        <div class="bottom">
+                            <button class="btn submitBtn" style="padding: 0.5rem;">Log In</button>
+                        </div>
+                        <div class="links">
+                            <p><a href="#">Forgot Password?</a></p>
+                            <p class="right"><a href="#">New User? Register</a></p>
+                            <div class="clear"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //main -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        const usernameInput = document.getElementById("username");
+        const errorMsg = document.getElementById("error-msg");
+
+        const passwordInput = document.getElementById("password");
+        const passwordErrorMsg = document.getElementById("password-error");
+
+        function validateUsername() {
+            if (usernameInput.validity.patternMismatch) {
+                $(".username").css("border-color", "red");
+                errormsg.textContent = "Username must be between 3 and 20 letters and should contain only letters and numbers";
+                usernameInput.setCustomValidity("Username must be between 3 and 20 letters and should contain only letters and numbers");
+            } else {
+                $(".username").css("border-color", "");
+                errormsg.textContent = "";
+                usernameInput.setCustomValidity("");
+            }
+            if (usernameInput.validity.valid && passwordInput.validity.valid) {
+                submitBtn.disabled = false;
+            }
+        }
+
+        function validatePassword() {
+            if (passwordInput.validity.patternMismatch) {
+                $(".pass").css("border-color", "red");
+                passworderror.textContent = "Password must be between 8 and 20 letters and should contain only letters and numbers";
+                passwordInput.setCustomValidity("patternMismatch must be between 8 and 20 letters and should contain only letters and numbers");
+            } else {
+                $(".pass").css("border-color", "");
+                passworderror.textContent = "";
+                passwordInput.setCustomValidity("");
+            }
+            if (usernameInput.validity.valid && passwordInput.validity.valid) {
+                submitBtn.disabled = false;
+            }
+        }
+        usernameInput.addEventListener("input", validateUsername);
+        passwordInput.addEventListener("input", validatePassword);
+    </script>
+
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+</body>
+</html>

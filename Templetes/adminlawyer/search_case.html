@@ -1,0 +1,152 @@
+{% extends 'adminlawyer/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<main class="content">
+<div class="container-fluid p-0">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					{% if result1 is 0 %}
+						<h2>No Data</h2>
+					{% else %}
+					<div class="card-header">
+						<h5 class="card-title">All Deatails of Case</h5>
+					</div>
+					<div class="card-body">
+						<form method="post" action="">
+							{% csrf_token %}
+							<div class="row">
+
+							<div class="col-12">
+							<div class="card">
+								<!-- <div class="card-header">
+									<h5 class="card-title">Cases DataTables</h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of clients</h6>
+								</div> -->
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" style="width: 100%;">
+										<thead>
+											<tr>
+												<th>Title</th>
+												<th>Case Type</th>
+												<th>Police Station</th>
+												<th>Court</th>
+												<th>Regestation Date</th>
+												<!-- <th>Status</th> -->
+												<!-- <th>State</th> -->
+												<th> </th>
+												<th> </th>
+												<th> </th>
+											</tr>
+										</thead>
+										<tbody>
+
+											{% for row in result %}
+												<tr>
+													<td>{{row.title}}</td>
+													<td>{{row.case_type}}</td>
+													<td>{{row.police_station}}</td>
+													<td>{{row.court}}</td>
+													<td>{{row.case_reg_date}}</td>
+													<!-- <td>{{row.state}}</td> -->
+													<td><a href="/adminlawyer/all_cases/{{row.id}}">View</a></td>
+													<td><a href="/adminlawyer/case_delete/{{row.id}}">delete</a></td>
+													<td><a href="/adminlawyer/case_edit/{{row.id}}">edit</a></td>
+												</tr>
+											{% endfor %}
+
+										</tbody>
+									</table>
+									<!-- <table id="datatables-reponsive" class="table table-striped" style="font-size: 16px;">
+										
+										<tbody>
+
+										
+													<tr >
+														<th style="border-right: 1px lightgrey solid">Case ID</th>
+														<td>{{result.id}}</td>
+														
+													</tr>
+												
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Case Title</th>
+														<td>{{result.title}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Case Description</th>
+														<td>{{result.description}}</td>
+													</tr>
+													
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Case Type</th>
+														<td>{{result.case_type}}</td>
+													</tr>
+
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Client Name</th>
+														<td>{{result.client}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Lawyer Name</th>
+														<td>{{result.lawyer}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Registration Date</th>
+														<td>{{result.case_reg_date}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Judge Name</th>
+														<td>{{result.judge}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Poilice Station</th>
+														<td>{{result.police_station}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Court</th>
+														<td>{{result.court}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Case Status</th>
+														<td>{{result.status}}</td>
+													</tr>
+
+													
+														
+														
+													
+														
+										</tbody>
+									</table> -->
+									
+									<!-- <a href="/adminlawyer/view_doc/{{result.id}}" class="btn btn-primary" style="font-size:1rem; margin-left: 10px;">View Document(s)</a>
+									
+									<a href="/adminlawyer/view_date/{{result.id}}" class="btn btn-primary" style="font-size:1rem; margin-left: 10px;">View Hearing Date</a>
+
+									<a href="/adminlawyer/result/{{result.id}}" class="btn btn-primary" style="font-size:1rem; margin-left: 10px;">Result</a> -->
+								</div>
+							</div>
+						</div>
+
+							</div>
+						</form>	
+					</div>
+				{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+{% endblock %}

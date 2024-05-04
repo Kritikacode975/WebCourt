@@ -1,0 +1,49 @@
+{% extends 'adminlawyer/layout.html' %}
+{% load static %}
+{% block content %}
+
+<main class="content">
+				<div class="container-fluid p-0">
+
+
+					<div class="row">
+						<div class="col-md-4 col-xl-3">
+							<div class="card mb-3">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Profile Details</h5>
+								</div>
+								<div class="card-body text-center">
+									<img src="{% static 'client/img/seema.png' %}" alt="Stacie Hall" class="img-fluid rounded-circle mb-2" style="height: 128px; width: 128px;" />
+									<h5 class="card-title mb-0">{{result.username}}</h5>
+									<div class="text-muted mb-2">Admin Lawyer</div>
+<!-- 
+									<div>
+										<a class="btn btn-primary btn-sm" href="#">Follow</a>
+										<a class="btn btn-primary btn-sm" href="#"><span data-feather="message-square"></span> Message</a>
+									</div> -->
+								</div>
+							</div>
+						</div>
+						<div class="col-md-9 col-xl-9">
+							<div class="card mb-3">
+								<div class="card-header">
+									<h5 class="card-title mb-0">              </h5>
+								</div>
+								<div class="card-body">
+									
+									<br><h5 class="card-title mb-0">Seema Khushwa</h5><br>
+									<h3 class="mb-0">{{result.address}}</h3><br>
+									<h4 class="mb-0">{{result.contact}}</h4><br>
+									<h4 class="mb-0">{{result.email}}</h4><br>
+									<h4 class="mb-0">Qualification : {{result.qualification}}</h4><br>
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+
+				</div>
+			</main>
+
+{% endblock %}

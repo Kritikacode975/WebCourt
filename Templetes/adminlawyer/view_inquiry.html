@@ -1,0 +1,55 @@
+{% extends 'adminlawyer/layout.html' %}
+
+{% block content %}
+
+<main class="content">
+<div class="container-fluid p-0">
+
+					
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Inquiry Details</h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of inquiry details</h6>
+								</div>
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" >
+										
+										<tbody>
+
+											<tr>
+												<td>inquiry_id</td>
+												<td>inquiry_name</td>
+												<td>Email_id</td>
+												<td>Contact</td>
+												<td>Message</td>
+												<td>Delete</td>
+												<!-- <th>Case</th> -->
+												
+											</tr>
+
+											{% for row in result %}
+											<!-- {% if row.cases_id == case.id %} -->
+												<tr>
+													<td>{{row.id}}</td>
+													<td>{{row.name}}</td>
+													<td>{{row.email}}</td>
+													<td>{{row.phone}}</td>
+													<td>{{row.message}}</td>
+													<td><a href="/adminlawyer/inquiry_delete/{{row.id}}">Delete</a></td>
+													<!-- <td>{{row.cases}}</td> -->
+													
+												</tr>
+											<!-- {% endif %} -->
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div></main>
+{% endblock %}

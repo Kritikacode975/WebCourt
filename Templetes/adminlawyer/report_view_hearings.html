@@ -1,0 +1,45 @@
+{% extends 'adminlawyer/reportlayout.html' %}
+{% block content %}
+
+<main class="content">
+	<div class="container-fluid p-0">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title">Report of Hearing Dates</h5>
+					</div>
+					<div class="card-body">
+						<table id="datatables-reponsive" class="table table-striped">
+							<thead>
+								<tr>
+									<!-- <td>ID</td> -->
+									<td>Hearing Date</td>
+									<td>Remarks</td>
+									<td>Description</td>
+									<td>Status</td>
+									<td>Case Id</td>
+								</tr>
+							</thead>
+							<tbody>
+								{% for row in result %}
+								<tr>
+									<!-- <td>{{row.id}}</td> -->
+									<td>{{row.next_hearing_date}}</td>
+									<td>{{row.remarks}}</td>
+									<td>{{row.description}}</td>
+									<td>{{row.status}}</td>
+									<td>{{row.cases.id}}</td>
+
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</main>
+{% endblock %}

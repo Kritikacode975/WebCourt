@@ -1,0 +1,50 @@
+{% extends 'adminlawyer/layout.html' %}
+{% load static %}
+{% block content %}
+
+<main class="content">
+<div class="container-fluid p-0">
+
+					
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Documents </h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of Documents</h6>
+								</div>
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" >
+										
+										<tbody>
+
+											<tr>
+												<th>FileId</th>
+												<th>FileName</th>
+												<th>Document</th>
+												<th>Description</th>
+												<th> </th>
+											</tr>
+
+
+											{% for row in result %}
+											{% if row.cases_id == case.id %}
+												<tr>
+													<td>{{row.id}}</td>
+													<td>{{row.title}}</td>
+													<td><a href="/media/document/{{row.document}}" download>Download</a></td>
+													<td>{{row.description}}</td>
+													<td><a href="/adminlawyer/document_delete/{{row.id}}">delete</a></td>
+												</tr>
+											{% endif %}
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div></main>
+{% endblock %}

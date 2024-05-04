@@ -1,0 +1,237 @@
+{% extends 'staff/layout.html' %}
+
+{% block content %}
+
+
+<main class="content">
+				<div class="container-fluid p-0">
+<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Add New Case</h5>
+									<h6 class="card-subtitle text-muted">All the Details are Required to be filled !</h6>
+								</div>
+								<div class="card-body">
+									<form method="post" action="/staff/case_store" enctype="multipart/form-data">
+
+										<div class="row">
+											{% csrf_token %}
+											<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Case Title : </label>
+											<input type="text" class="form-control" pattern="[a-zA-Z\s]{4,50}" id="fullname" name="title" placeholder="e.g. Meet's Bail Application">
+											<div id="fullnameError" class="error"></div>
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Case Type : </label>
+												<input type="text" class="form-control" pattern="[A-Za-z\s]{4,50}" id="fullname1" name="case_type" placeholder="e.g. Bail Application">
+												<div id="fullnameError1" class="error"></div>
+										</div>
+
+										<div class="mb-3 col-md-8">
+											<label class="form-label" for="inputAddress">Case Description : </label>
+											<textarea class="form-control" minlength="4" maxlength="255" id="address" title="Description must be between 4 and 255 characters long" rows="2" name="description" placeholder="e.g. Meet's Bail Application for the year 2009"></textarea>
+											<div id="addressError" class="error"></div>
+										</div>
+
+										<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputZip">Registration Date : </label>
+												<input type="date" class="form-control" id="inputZip" name="case_reg_date" required>
+										</div>
+							
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Lawyer Name : </label>
+												
+              									<select id="lawyer" name="lawyer" class="form-control select2" data-toggle="select2" required>
+													
+									                {% for u in result1 %}
+														<option value="{{u.id}}" >{{u.lawyer_name}}</option>
+													{% endfor %}
+              									</select>
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputPassword4">Client Name : </label>
+											<select id="client" name="client" class="form-control select2" data-toggle="select2" required>
+													
+									                {% for u in result %}
+														<option value="{{u.id}}" >{{u.client_name}}</option>
+													{% endfor %}
+              									</select>
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Judge Name : </label>
+												<input type="text" class="form-control" id="fullname3" name="judge" pattern="[a-zA-Z\s]{4,50}" placeholder="e.g. Keval Patadiya">
+												<div id="fullnameError3" class="error"></div>
+										</div>
+
+										<div class="mb-2 col-md-6">
+												<label class="form-label" for="inputCity">Police Station : </label>
+												<input type="text"  class="form-control" id="fullname4" pattern="[a-zA-Z\s]{4,50}" name="police_station" placeholder="e.g. Shahpur Ploce Station">
+												<div id="fullnameError4" class="error"></div>
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Court : </label>
+												<input type="text" class="form-control" id="fullname5" pattern="[a-zA-Z\s]{4,50}" name="court" placeholder="e.g. Gujarat High Court">
+												<div id="fullnameError5" class="error"></div>
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">FIR Copy : </label>
+												<input type="file" class="form-control" id="inputPassword4" name="fir_copy" placeholder="" required>
+										</div>
+
+										<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputPassword4">State : </label>
+												<select name="state" class="form-control select2" data-toggle="select2">
+													
+										            {% for u in state %}
+														<option value="{{u.id}}" >{{u.state_name}}</option>
+													{% endfor %}
+										          </select>
+											</div>	
+
+										<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputEmail4">City : </label>
+												<select name="city" class="form-control select2" data-toggle="select2">
+													
+									            {% for y in city %}
+													<option value="{{y.id}}" >{{y.city_name}}</option>
+												{% endfor %}
+									            </select>
+											</div>
+											
+
+											<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputState">Case Status : </label>
+												<select id="status" name="status" class="form-control">
+													
+									                <option>Running</option>
+									                <option>Closed</option>
+              									</select>
+											</div>
+											
+										</div>
+
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div></main>
+
+<script>
+      const fullnameInput = document.getElementById("fullname");
+      const fullnameInput1 = document.getElementById("fullname1");
+     const addressInput = document.getElementById("address");
+      const fullnameInput3 = document.getElementById("fullname3");
+      const fullnameInput4 = document.getElementById("fullname4");
+      const fullnameInput5 = document.getElementById("fullname5");
+  
+      
+      function validateFullname() {
+        if (fullnameInput.validity.patternMismatch) {
+          fullnameError.textContent = "Case Title must be between 4 and 50 letters long and only contain letters";
+          fullnameInput.setCustomValidity("Case Title must be between 4 and 50 letters long and only contain letters");
+        } else {
+          fullnameError.textContent = "";
+          fullnameInput.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && fullnameInput1.validity.valid && fullnameInput2.validity.valid && fullnameInput3.validity.valid && fullnameInput4.validity.valid && fullnameInput5.validity.valid ) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validateFullname1() {
+        if (fullnameInput1.validity.patternMismatch) {
+          fullnameError1.textContent = "Case Type must be between 4 and 50 letters long and only contain letters";
+          fullnameInput1.setCustomValidity("Case Type must be between 4 and 50 letters long and only contain letters");
+        } else {
+          fullnameError1.textContent = "";
+          fullnameInput1.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && fullnameInput1.validity.valid && fullnameInput2.validity.valid && fullnameInput3.validity.valid && fullnameInput4.validity.valid && fullnameInput5.validity.valid ) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validateAddress() {
+        if (addressInput.validity.patternMismatch) {
+          addressError.textContent = "Address must be between 10 and 200 characters long";
+          addressInput.setCustomValidity("Address must be between 10 and 200 characters long");
+        } else {
+          addressError.textContent = "";
+          addressInput.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && fullnameInput1.validity.valid && fullnameInput2.validity.valid && fullnameInput3.validity.valid && fullnameInput4.validity.valid && fullnameInput5.validity.valid ) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validateFullname3() {
+        if (fullnameInput3.validity.patternMismatch) {
+          fullnameError3.textContent = "Judge Name must be between 4 and 50 letters long and only contain letters";
+          fullnameInput3.setCustomValidity("Judge Name must be between 4 and 50 letters long and only contain letters");
+        } else {
+          fullnameError3.textContent = "";
+          fullnameInput3.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && fullnameInput1.validity.valid && fullnameInput2.validity.valid && fullnameInput3.validity.valid && fullnameInput4.validity.valid && fullnameInput5.validity.valid ) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validateFullname4() {
+        if (fullnameInput4.validity.patternMismatch) {
+          fullnameError4.textContent = "Police Station must be between 4 and 50 letters long and only contain letters";
+          fullnameInput1.setCustomValidity("Police Station must be between 4 and 50 letters long and only contain letters");
+        } else {
+          fullnameError4.textContent = "";
+          fullnameInput4.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && fullnameInput1.validity.valid && fullnameInput2.validity.valid && fullnameInput3.validity.valid && fullnameInput4.validity.valid && fullnameInput5.validity.valid ) {
+          submitBtn.disabled = false;
+        }
+      }
+
+
+      function validateFullname5() {
+        if (fullnameInput5.validity.patternMismatch) {
+          fullnameError5.textContent = "Court Name must be between 4 and 50 letters long and only contain letters";
+          fullnameInput5.setCustomValidity("Court Name must be between 4 and 50 letters long and only contain letters");
+        } else {
+          fullnameError5.textContent = "";
+          fullnameInput5.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && fullnameInput1.validity.valid && fullnameInput2.validity.valid && fullnameInput3.validity.valid && fullnameInput4.validity.valid && fullnameInput5.validity.valid ) {
+          submitBtn.disabled = false;
+        }
+      }
+
+     
+
+
+
+
+
+
+      
+      fullnameInput.addEventListener("input", validateFullname);
+      fullnameInput1.addEventListener("input", validateFullname1);
+       addressInput.addEventListener("input", validateAddress);
+      fullnameInput3.addEventListener("input", validateFullname3);
+      fullnameInput4.addEventListener("input", validateFullname4);
+      fullnameInput5.addEventListener("input", validateFullname5);
+
+
+    </script>					
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'adminlawyer/layout.html' %}
+{% load static %}
+{% block content %}
+
+<main class="content">
+<div class="container-fluid p-0">
+
+					
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Hearing Dates</h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of Hearing Date</h6>
+								</div>
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" >
+										
+										<tbody>
+
+											<tr>
+												<td>Case</td>
+												<td>Hearing Date</td>
+												<td>Remarks</td>
+												<td>Description</td>
+												<td>Status</td>
+												
+											</tr>
+
+											{% for row in result %}
+											{% if row.cases_id == case.id %}
+												<tr>
+													<td>{{row.cases}}</td>
+													<td>{{row.next_hearing_date}}</td>
+													<td>{{row.remarks}}</td>
+													<td>{{row.description}}</td>
+													<td>{{row.status}}</td>
+												</tr>
+											{% endif %}
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div></main>
+{% endblock %}

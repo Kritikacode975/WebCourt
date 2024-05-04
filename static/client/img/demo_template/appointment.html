@@ -1,0 +1,378 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Webcourt</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ThemeZaa">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta name="description" content="Webcourt">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+</head>
+
+<body data-mobile-nav-style="classic">
+    <!-- start header -->
+    <header>
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent header-light fixed-top header-reverse-scroll">
+            <div class="container-lg nav-header-container">
+                <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0" style="width: 300px;">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/webcourt-logo-white.png" data-at2x="img/webcourt-logo-white.png"
+                            class="default-logo" alt="">
+                        <img src="img/webcourt-logo-black.png" data-at2x="img/webcourt-logo-black.png" class="alt-logo"
+                            alt="">
+                        <img src="img/webcourt-logo-black.png" data-at2x="img/webcourt-logo-black.png"
+                            class="mobile-logo" alt="">
+                    </a>
+                </div>
+                <div class="col-auto menu-order px-lg-0">
+                    <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Cases</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Appointments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Practices</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Feedback</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- end navigation -->
+    </header>
+    <!-- end header -->
+    <div class="main-content">
+        <!-- start page title -->
+        <section class="parallax" data-parallax-background-ratio="0.5"
+            style="background-image:url('img//appointment.jpg');">
+            <div class="opacity-medium "></div>
+            <div class="container">
+                <div class="row align-items-stretch justify-content-center extra-small-screen">
+                    <div
+                        class="col-12 position-relative page-title-large text-center d-flex align-items-center justify-content-center flex-column">
+                        <span
+                            class="d-block text-white opacity-6 alt-font margin-5px-bottom xs-line-height-20px"></span>
+                        <h1 class="alt-font text-white font-weight-500 no-margin-bottom">MAKE APPOINTMENT</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end page title -->
+        <!-- start section -->
+        <section class="bg-light-gray overflow-visible pt-md-0">
+            <div class="container">
+                <div class="z-index-6 position-relative overlap-section-three-fourth bg-white box-shadow-large padding-8-rem-all md-padding-5-rem-all xs-padding-4-rem-tb xs-padding-2-rem-lr wow animate__fadeIn"
+                    data-wow-delay="0.4s">
+                    <div class="row justify-content-center">
+                        <div
+                            class="col-12 col-xl-6 col-lg-7 text-center margin-1-half-rem-bottom md-margin-1-rem-bottom">
+                            <h4 class="alt-font font-weight-600 text-extra-dark-gray">Appointment Request</h4>
+                            <span
+                                class="alt-font letter-spacing-minus-1-half text-extra-medium d-block margin-5px-bottom">Please Make Your Appointment With Lawyer</span>
+                        </div>
+                        <div class="col-12">
+                            <!-- start contact form -->
+                            <form action="email-templates/contact-form.php" method="post" novalidate="">
+                                <div class="row row-cols-1 row-cols-md-2">
+                                    <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
+                                    <label>Select Case:</label>
+                                    <select class="medium-input bg-white mb-0 required">
+                                        <option>Select Your Case</option>
+                                        <option>Small select</option>
+                                        <option>Small select</option>
+                                        <option>Small select</option>
+                                    </select>
+                                        <label>Date:</label>
+                                        <input class="medium-input bg-white mb-0 required" type="date"
+                                            name="date" placeholder="Appointment Date">
+                                        <label>Time:</label>
+                                        <input class="medium-input bg-white mb-0 required" type="time" name="time"
+                                            placeholder="-----">
+                                            <label>Status:</label>
+                                            <input class="medium-input bg-white mb-0 required" type="Text" name="Text"
+                                                placeholder="Case Status ">
+                                    </div>
+                                    <div class="col margin-4-rem-bottom sm-margin-20px-bottom required">
+                                        <label>Description:</label>
+                                        <textarea class="medium-textarea bg-white h-288px" rows="6" name="Description"
+                                            placeholder="Write Description Here..."></textarea>
+                                    </div>
+                                    <div class="col text-start sm-margin-25px-bottom">
+                                        <input type="checkbox" name="terms_condition" id="terms_condition" value="1"
+                                            class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
+                                        <label for="terms_condition"
+                                            class="text-small d-inline-block align-top w-85 md-w-90 xs-w-85">I accept
+                                            the terms & conditions and I understand that my data will be hold securely
+                                            in accordance with the <a href="privacy.html" target="_blank"
+                                                class="text-decoration-underline text-extra-dark-gray">privacy
+                                                policy</a>.</label>
+                                    </div>
+                                    <div class="col text-center text-md-end">
+                                        <button id="project-contact-us-button"
+                                            class="btn btn-medium bg-transparent-fast-blue2 text-white mb-0 submit"
+                                            type="submit">Request Appointment</button>
+                                    </div>
+                                </div>
+                                <div class="form-results d-none"></div>
+                            </form>
+                            <!-- end contact form -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center wow animate__fadeIn">
+                    <div
+                        class="col-12 col-lg-10 d-flex flex-row align-items-center justify-content-center text-center margin-7-half-rem-top">
+                        <span class="col-auto w-40px h-1px bg-dark-gray opacity-3"></span>
+                        <div class="alt-font font-weight-500 text-large text-extra-dark-gray padding-20px-lr">We like to
+                            talk and on the strength of that you are invited for a coffee</div>
+                        <span class="col-auto w-40px h-1px bg-dark-gray opacity-3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- start fancy text box item -->
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom">
+                        <div
+                            class="feature-box feature-box-hide-show-hover bg-white border-radius-6px overflow-hidden box-shadow-large box-shadow-extra-large-hover">
+                            <div
+                                class="feature-box-move-bottom-top padding-5-rem-lr padding-15px-tb lg-padding-2-half-rem-lr md-padding-4-half-rem-lr">
+                                <div class="feature-box-icon">
+                                    <i
+                                        class="line-icon-Mail-Read d-block icon-medium text-fast-blue margin-25px-bottom"></i>
+                                </div>
+                                <div class="feature-box-content last-paragraph-no-margin">
+                                    <span
+                                        class="text-extra-dark-gray text-extra-medium d-block alt-font font-weight-500">How
+                                        can we help you?</span>
+                                </div>
+                                <div class="move-bottom-top margin-10px-top last-paragraph-no-margin">
+                                    <a href="mailto:Creart@gmail.com" class="alt-font text-decoration-underline">Creart@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="feature-box-overlay"></div>
+                        </div>
+                    </div>
+                    <!-- end fancy text box item -->
+                    <!-- start fancy text box item -->
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8">
+                        <div
+                            class="feature-box feature-box-hide-show-hover bg-white border-radius-6px overflow-hidden box-shadow-large box-shadow-extra-large-hover">
+                            <div
+                                class="feature-box-move-bottom-top padding-5-rem-lr padding-15px-tb lg-padding-2-half-rem-lr md-padding-4-half-rem-lr">
+                                <div class="feature-box-icon">
+                                    <i
+                                        class="line-icon-Location-2 d-block icon-medium text-fast-blue margin-25px-bottom"></i>
+                                </div>
+                                <div class="feature-box-content last-paragraph-no-margin">
+                                    <span
+                                        class="text-extra-dark-gray text-extra-medium d-block alt-font font-weight-500">Ready
+                                        to request a quote?</span>
+                                </div>
+                                <div class="move-bottom-top margin-10px-top last-paragraph-no-margin">
+                                    <a href="https://maps.app.goo.gl/D6x3qfJxyY6LeChLA" class="alt-font text-decoration-underline">Ahmedabad, Gujarat, India</a>
+                                </div>
+                            </div>
+                            <div class="feature-box-overlay"></div>
+                        </div>
+                    </div>
+                    <!-- end fancy text box item -->
+                    <!-- start fancy text box item -->
+                    <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom">
+                        <div
+                            class="feature-box feature-box-hide-show-hover bg-white border-radius-6px overflow-hidden box-shadow-large box-shadow-extra-large-hover">
+                            <div
+                                class="feature-box-move-bottom-top padding-5-rem-lr padding-15px-tb lg-padding-2-half-rem-lr md-padding-4-half-rem-lr">
+                                <div class="feature-box-icon">
+                                    <i
+                                        class="line-icon-Phone-2 d-block icon-medium text-fast-blue margin-25px-bottom"></i>
+                                </div>
+                                <div class="feature-box-content last-paragraph-no-margin">
+                                    <span
+                                        class="text-extra-dark-gray text-extra-medium d-block alt-font font-weight-500">Feel
+                                        free to get in touch?</span>
+                                </div>
+                                <div class="move-bottom-top margin-10px-top last-paragraph-no-margin">
+                                    <a href="tel:+91-9275333823" class="alt-font text-decoration-underline">+91-9275333823</a>
+                                </div>
+                            </div>
+                            <div class="feature-box-overlay"></div>
+                        </div>
+                    </div>
+                    <!-- end fancy text box item -->
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="half-section bg-light-gray">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div
+                        class="col-12 col-lg-6 col-md-7 col-sm-6 text-center text-sm-start sm-margin-25px-tb xs-margin-30px-bottom">
+                        <h6 class="alt-font text-extra-dark-gray font-weight-500 margin-10px-bottom">Are you ready to
+                            work with us?</h6>
+                        <a href="#" class="btn btn-extra-large btn-link text-fast-blue">Start a
+                            Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+    </div>
+    <!-- start footer -->
+    <footer class="bg-extra-dark-gray footer-sticky">
+        <div class="footer-top padding-six-top lg-padding-eight-tb md-padding-50px-tb">
+            <div class="container">
+                <div class="row">
+                    <!-- start footer column -->
+                    <div
+                        class="col-12 col-xl-3 col-sm-6 order-sm-1 order-xl-0 lg-margin-50px-bottom xs-margin-25px-bottom">
+                        <a href="index.html" class="footer-logo margin-40px-bottom d-block" style="width:170px"><img
+                                src="img/webcourt-logo-white.png" data-at2x="img/webcourt-logo-white.png" alt=""
+                                class="max-h-inherit"></a>
+                        <span
+                            class="alt-font font-weight-300 text-extra-large line-height-36px letter-spacing-minus-1-half d-inline-block w-85"
+                            style="text-align:left; font-size: 27px;">WebCourt:Case Management Redefined for a Digital
+                            Era.</span>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-xl-2 offset-xl-1 col-sm-6 order-sm-3 order-xl-0 xs-margin-25px-bottom">
+                        <span
+                            class="alt-font font-weight-500 d-block  text-uppercase letter-spacing-2px margin-20px-bottom xs-margin-10px-bottom"
+                            style="font-size: 20px; color: darkorange;">USEFUL PAGES</span>
+                        <ul style="list-style-type:disc; margin-left: 15px;">
+                            <li><a href="about-us.html" class="text-white-hover">Home</a></li>
+                            <li><a href="our-services.html" class="text-white-hover">About Us</a></li>
+                            <li><a href="our-team.html" class="text-white-hover">Cases</a></li>
+                            <li><a href="contact-us-classic.html" class="text-white-hover">Appointments</a></li>
+                            <li><a href="contact-us-classic.html" class="text-white-hover">Practices</a></li>
+                            <li><a href="contact-us-classic.html" class="text-white-hover">Feedback</a></li>
+                            <li><a href="contact-us-classic.html" class="text-white-hover">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-xl-2 offset-xl-1 col-sm-6 order-sm-4 order-xl-0 xs-margin-25px-bottom">
+                        <span
+                            class="alt-font font-weight-500 d-block  text-uppercase letter-spacing-2px margin-20px-bottom xs-margin-10px-bottom"
+                            style="font-size: 20px; color:darkorange;">Practices</span>
+                        <ul style="list-style-type: disc;  margin-left: 15px;">
+                            <li><a href="our-services.html" class="text-white-hover">Civil Law</a></li>
+                            <li><a href="our-services.html" class="text-white-hover">Cyber Law</a></li>
+                            <li><a href="our-services.html" class="text-white-hover">Criminal Law</a></li>
+                            <li><a href="our-services.html" class="text-white-hover">Education Law</a></li>
+                            <li><a href="our-services.html" class="text-white-hover">Family Law</a></li>
+                            <li><a href="our-services.html" class="text-white-hover">Business Law</a></li>
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div
+                        class="col-12 col-xl-2 offset-xl-1 col-sm-6 order-sm-2 order-xl-0 lg-margin-50px-bottom xs-no-margin-bottom">
+                        <span
+                            class="alt-font font-weight-500 d-block  text-uppercase letter-spacing-2px margin-30px-bottom xs-margin-25px-bottom"
+                            style="font-size: 20px; color:darkorange;">Follow us</span>
+                        <div>
+                            <h6 style="font-weight: bold; font-style: italic; color:darkcyan;">Get In Touch</h6>
+                            <p style="font-size: 15px;" onmouseover="this.style.color='white';"
+                                onmouseout="this.style.color='#828282';"><i class="fa fa-map-marker-alt"
+                                    style="margin-right: 5px; font-size: 18px; font-weight: bold;"></i>Ahmedabad, INDIA
+                            </p>
+                            <p style="font-size: 15px;" onmouseover="this.style.color='white';"
+                                onmouseout="this.style.color='#828282';"><i class="fa fa-phone-alt"
+                                    style="margin-right: 5px; font-size: 18px; font-weight: bold;"></i>+91-9836587345
+                            </p>
+                            <p style="font-size: 15px;" onmouseover="this.style.color='white';"
+                                onmouseout="this.style.color='#828282';"><i class="fa fa-envelope"
+                                    style="margin-right: 5px; font-size: 18px; font-weight: bold;"></i>Creart@gmail.com
+                            </p>
+                        </div>
+
+                        <div class="social-icon-style-12">
+                            <ul class="extra-small-icon light">
+                                <li><a class="facebook" href="index.html" target="_blank"><i class="fab fa-facebook-f"
+                                            style="font-size: 18px;"></i></a></li>
+                                <li><a class="dribbble" href="index.html" target="_blank"><i class="fab fa-dribbble"
+                                            style="font-size: 18px;"></i></a></li>
+                                <li><a class="twitter" href="index.html" target="_blank"><i class="fab fa-twitter"
+                                            style="font-size: 18px;"></i></a></li>
+                                <li><a class="instagram" href="index.html" target="_blank"><i class="fab fa-instagram"
+                                            style="font-size: 18px;"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end footer column -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom padding-six-bottom padding-seven-top xs-no-padding-top">
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-12 col-md-6 order-2 order-md-0 text-sm-center text-md-start last-paragraph-no-margin">
+                        <p>&copy; 2024 WebCourt is Proudly Powered by <a href="index.html" target="_blank"
+                                class="text-decoration-line-bottom text-white">Creart Solutions</a></p>
+                    </div>
+                    <div class="col-12 col-md-6 order-1 order-md-0 sm-margin-15px-bottom">
+                        <ul
+                            class="footer-horizontal-link d-flex flex-column flex-sm-row justify-content-sm-center justify-content-md-end">
+                            <li><a href="#" class="text-white-hover">Privacy policy</a></li>
+                            <li><a href="#" class="text-white-hover">Legal</a></li>
+                            <li><a href="#" class="text-white-hover">Terms of service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+    <!-- end scroll to top -->
+    <!-- javascript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/theme-vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

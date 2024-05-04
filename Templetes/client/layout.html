@@ -1,0 +1,227 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Webcourt | Your Trusted Partner for Legal Success </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ThemeZaa">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta name="description" content="Webcourt">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="{% static 'client/img/webcourt-favicon-white-57.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'client/img/webcourt-favicon-white-57.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'client/img/webcourt-favicon-white-72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'client/img/webcourt-favicon-white-114.png' %}">
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'client/css/font-icons.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'client/css/theme-vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'client/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'client/css/responsive.css' %}" />
+    <style>
+    .error {
+      color: red;
+    }
+
+    input:invalid, textarea:invalid {
+      border: 1px solid red;
+    }
+
+    input[type="date"]:invalid, input[type="time"]:invalid {
+        border: 1px solid #dbe7e1;
+    }
+    </style>
+</head>
+
+<body data-mobile-nav-style="classic">
+    <!-- start header -->
+    <header>
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent header-light fixed-top header-reverse-scroll">
+            <div class="container-lg nav-header-container">
+                <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0" style="width: 300px;">
+                    <a class="navbar-brand" href="/client/home">
+                        <img src="{% static 'client/img/webcourt-logo-white.png' %}" data-at2x="{% static 'client/img/webcourt-logo-white.png' %}"
+                            class="default-logo" alt="">
+                        <img src="{% static 'client/img/webcourt-logo-black.png' %}" data-at2x="{% static 'client/img/webcourt-logo-black.png' %}" class="alt-logo"
+                            alt="">
+                        <img src="{% static 'client/img/webcourt-logo-black.png' %}" data-at2x="{% static 'client/img/webcourt-logo-black.png' %}"
+                            class="mobile-logo" alt="">
+                    </a>
+                </div>
+                <div class="col-auto menu-order px-lg-0">
+                    <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item">
+                                <a href="/client/home" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/client/about" class="nav-link">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/client/contact" class="nav-link">Contact Us</a>
+                            </li>
+                            {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                                <a href="/client/cases" class="nav-link">Cases</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/client/appointment" class="nav-link">Appointments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/client/feedback" class="nav-link">Feedback</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/client/profile/{{user.id}}" class="nav-link">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/client/payment" class="nav-link">Payment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/client/logout" class="nav-link">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a href="/client/login" class="nav-link">Login</a>
+                            </li>
+                             {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- end navigation -->
+    </header>
+    <!-- end header -->
+    <!-- start content -->
+        {% block content %}
+
+        {% endblock %}
+        <!-- end content -->
+    <!-- start footer -->
+    <footer class="bg-extra-dark-gray footer-sticky">
+        <div class="footer-top padding-six-top lg-padding-eight-tb md-padding-50px-tb">
+            <div class="container">
+                <div class="row">
+                    <!-- start footer column -->
+                    <div
+                        class="col-12 col-xl-3 col-sm-6 order-sm-1 order-xl-0 lg-margin-50px-bottom xs-margin-25px-bottom">
+                        <a href="/client/home" class="footer-logo margin-40px-bottom d-block w-170px"><img
+                                src="{% static 'client/img/webcourt-logo-white.png' %}" data-at2x="{% static 'client/img/webcourt-logo-white.png' %}" alt=""
+                                class="max-h-inherit"></a>
+                        <span
+                            class="alt-font font-weight-300 text-extra-large line-height-36px letter-spacing-minus-1-half d-inline-block w-85"
+                            style="text-align:left; font-size: 27px;">WebCourt:Case Management Redefined for a Digital
+                            Era.</span>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-xl-2 offset-xl-1 col-sm-6 order-sm-3 order-xl-0 xs-margin-25px-bottom">
+                        <span
+                            class="alt-font font-weight-500 d-block  text-uppercase letter-spacing-2px margin-20px-bottom xs-margin-10px-bottom"
+                            style="font-size: 20px; color: darkorange;">USEFUL PAGES</span>
+                        <ul style="list-style-type:disc; margin-left: 15px;">
+                            <li><a href="/client/home" class="text-white-hover">Home</a></li>
+                            <li><a href="/client/about" class="text-white-hover">About Us</a></li>
+                            <li><a href="/client/cases" class="text-white-hover">Cases</a></li>
+                            <li><a href="/client/appointment" class="text-white-hover">Appointments</a></li>
+                            <li><a href="/client/feedback" class="text-white-hover">Feedback</a></li>
+                            <li><a href="/client/contact" class="text-white-hover">Contact us</a></li>
+                            <li><a href="/client/payment" class="text-white-hover">Payment</a></li>
+
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-xl-2 offset-xl-1 col-sm-6 order-sm-4 order-xl-0 xs-margin-25px-bottom">
+                        <span
+                            class="alt-font font-weight-500 d-block  text-uppercase letter-spacing-2px margin-20px-bottom xs-margin-10px-bottom"
+                            style="font-size: 20px; color:darkorange;">Practices</span>
+                        <ul style="list-style-type: disc;  margin-left: 15px;">
+                            <li><a class="text-white-hover">Civil Law</a></li>
+                            <li><a class="text-white-hover">Cyber Law</a></li>
+                            <li><a class="text-white-hover">Criminal Law</a></li>
+                            <li><a class="text-white-hover">Education Law</a></li>
+                            <li><a class="text-white-hover">Family Law</a></li>
+                            <li><a class="text-white-hover">Business Law</a></li>
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div
+                        class="col-12 col-xl-2 offset-xl-1 col-sm-6 order-sm-2 order-xl-0 lg-margin-50px-bottom xs-no-margin-bottom">
+                        <span
+                            class="alt-font font-weight-500 d-block  text-uppercase letter-spacing-2px margin-30px-bottom xs-margin-25px-bottom"
+                            style="font-size: 20px; color:darkorange;">Follow us</span>
+                        <div>
+                            <h6 style="font-weight: bold; font-style: italic; color:darkcyan;">Get In Touch</h6>
+                            <p style="font-size: 15px;" onmouseover="this.style.color='white';"
+                                onmouseout="this.style.color='#828282';"><i class="fa fa-map-marker-alt"
+                                    style="margin-right: 5px; font-size: 18px; font-weight: bold;"></i>Ahmedabad, INDIA
+                            </p>
+                            <p style="font-size: 15px;" onmouseover="this.style.color='white';"
+                                onmouseout="this.style.color='#828282';"><i class="fa fa-phone-alt"
+                                    style="margin-right: 5px; font-size: 18px; font-weight: bold;"></i>+91-9836587345
+                            </p>
+                            <p style="font-size: 15px;" onmouseover="this.style.color='white';"
+                                onmouseout="this.style.color='#828282';"><i class="fa fa-envelope"
+                                    style="margin-right: 5px; font-size: 18px; font-weight: bold;"></i>Creart@gmail.com
+                            </p>
+                        </div>
+                        <div class="social-icon-style-12">
+                            <ul class="extra-small-icon light">
+                                <li><a class="facebook" href="#" target="_blank"><i class="fab fa-facebook-f"
+                                            style="font-size: 18px;"></i></a></li>
+                                <li><a class="dribbble" href="#" target="_blank"><i class="fab fa-dribbble"
+                                            style="font-size: 18px;"></i></a></li>
+                                <li><a class="twitter" href="#" target="_blank"><i class="fab fa-twitter"
+                                            style="font-size: 18px;"></i></a></li>
+                                <li><a class="instagram" href="#" target="_blank"><i class="fab fa-instagram"
+                                            style="font-size: 18px;"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end footer column -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom padding-six-bottom padding-seven-top xs-no-padding-top">
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-12 col-md-6 order-2 order-md-0 text-sm-center text-md-start last-paragraph-no-margin">
+                        <p>&copy; 2024 WebCourt is Proudly Powered by <a href="index.html" target="_blank"
+                                class="text-decoration-line-bottom text-white">Creart Solutions</a></p>
+                    </div>
+                    <div class="col-12 col-md-6 order-1 order-md-0 sm-margin-15px-bottom">
+                        <ul
+                            class="footer-horizontal-link d-flex flex-column flex-sm-row justify-content-sm-center justify-content-md-end">
+                            <li><a href="#" class="text-white-hover">Privacy policy</a></li>
+                            <li><a href="#" class="text-white-hover">Legal</a></li>
+                            <li><a href="#" class="text-white-hover">Terms of service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+    <!-- end scroll to top -->
+    <!-- javascript -->
+    <script type="text/javascript" src="{% static 'client/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'client/js/theme-vendors.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'client/js/main.js' %}"></script>
+</body>
+
+</html>

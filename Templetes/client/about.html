@@ -1,0 +1,203 @@
+{% extends 'client/layout.html' %}
+{% load static %}
+{% block content %}
+ <div class="main-content">
+        <!-- start page title -->
+        <section class="parallax" data-parallax-background-ratio="0.5"
+            style="background-image:url('{% static 'client/img/about_us.png' %}');">
+            <div class="opacity-medium "></div>
+            <div class="container">
+                <div class="row align-items-stretch justify-content-center extra-small-screen">
+                    <div
+                        class="col-12 position-relative page-title-large text-center d-flex align-items-center justify-content-center flex-column">
+                        <span
+                            class="d-block text-white opacity-6 alt-font margin-5px-bottom xs-line-height-20px"></span>
+                        <h1 class="alt-font text-white font-weight-500 no-margin-bottom"></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end page title -->
+        <!-- start section -->
+        <section class="big-section cover-background overflow-visible"
+            style="background-image: url('{% static 'client/img/home-startup-about-bg.jpg' %}');">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div
+                        class="col-12 col-lg-3 col-md-6 order-1 text-center text-lg-end last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInLeft">
+                        <div
+                            class="title-large-2 text-dark-gray alt-font line-height-70px letter-spacing-minus-3px font-weight-600">
+                            175+</div>
+                        <span
+                            class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom">Country
+                            offices</span>
+                        <p class="w-90 d-inline-block sm-w-60 xs-w-80">
+                           <b>1. Location: Mumbai, Maharashtra </b></br>
+
+                                Address: 123 Main Street, Mumbai
+                                Contact: +91-XXX-XXXXXXX
+                                Staff: 25 employees
+                                Services: Case management, legal support</p><br>
+
+                           <b>2. Location: Delhi </b><br>   
+                            
+                                 Address: 456 Park Avenue, Delhi
+                                 Contact: +91-XXX-XXXXXXX
+                                 Staff: 30 employees
+                                 Services: Case management, IT support</p>
+                    </div>
+                    <div class="col-12 col-lg-6 order-3 order-lg-2 text-center z-index-0 wow animate__fadeIn">
+                        <div class="tilt-box"
+                            data-tilt-options='{ "maxTilt": 20, "perspective": 1000, "easing": "cubic-bezier(.03,.98,.52,.99)", "scale": 1, "speed": 500, "transition": true, "reset": true, "glare": false, "maxGlare": 1 }'>
+                            <span
+                                class="text-extra-big-2 alt-font text-uppercase text-green font-weight-600 letter-spacing-minus-10px image-mask cover-background"
+                                style="background-image: url('{% static 'client/img/feedback.jpg' %}')">20</span>
+                            <span
+                                class="alt-font text-extra-large text-extra-dark-gray letter-spacing-4px font-weight-600 text-uppercase margin-5px-top d-block">Years
+                                of experience</span>
+                        </div>
+                    </div>
+                    <div
+                        class="col-12 col-lg-3 col-md-6 order-2 text-center text-lg-start order-lg last-paragraph-no-margin md-margin-50px-bottom wow animate__fadeInRight">
+                        <div
+                            class="title-large-2 text-dark-gray alt-font line-height-70px letter-spacing-minus-3px font-weight-600">
+                            200+</div>
+                        <span
+                            class="alt-font text-extra-dark-gray font-weight-500 text-uppercase letter-spacing-2px d-block margin-15px-bottom sm-margin-5px-bottom">High
+                            skilled people</span>
+                        <p class="w-90 d-inline-block sm-w-60 xs-w-80">
+                           <b> 1. John Doe - Senior Case Manager</b><br>
+
+                                       Over 10 years of experience in case management.
+                                       <!-- Specializes in complex litigation cases. -->
+                                       Managed high-profile cases with successful outcomes.<br>
+                            
+                           <b> 2. Jane Smith - Legal Assistant </b></br>
+                                            5 years of experience supporting case managers.
+                                            <!-- Proficient in legal research and document preparation. -->
+                                            Strong organizational skills, ensuring smooth case progression.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="overflow-visible pt-md-0 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center overlap-section wow animate__zoomIn">
+                        <img class="rounded-circle box-shadow-large w-170px h-170px border-all border-width-10px border-color-white"
+                            src="{% static 'client/img/our_teams.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="big-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 text-center margin-seven-bottom">
+                        <h3 class="alt-font text-extra-dark-gray font-weight-500">Why Choose Us</h6>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-center">
+                    <div class="web-agency col-12 col-xl-5 col-lg-6 col-md-9 md-margin-3-rem-bottom">
+                        <div class="col-12 p-0 margin-5-rem-bottom wow animate__fadeIn">
+                            <span
+                                class="alt-font font-weight-600 text-gradient-fast-gray text-uppercase d-inline-block margin-15px-bottom">Our Features
+                                </span>
+                            <h4 class="alt-font font-weight-600 text-extra-dark-gray d-block letter-spacing-minus-1px">
+                                Understand and apply the Law process</h4>
+                        </div>
+                        <div class="col-12 p-0">
+                            <!-- start process step item -->
+                            <div class="col-12 p-0 process-step-style-02 wow animate__fadeIn" data-wow-delay="0.1s">
+                                <div class="process-step-item">
+                                    <div class="process-step-icon-wrap">
+                                        <div
+                                            class="process-step-icon text-center border-all border-color-dark-gray border-width-2px bg-dark-gray alt-font font-weight-500">
+                                            1</div>
+                                        <span class="process-step-item-box-bfr bg-medium-gray"></span>
+                                    </div>
+                                    <div class="process-content last-paragraph-no-margin">
+                                        <span
+                                            class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Best Law Practices
+                                            research</span>
+                                        <p class="w-60 md-w-80 xs-w-100">Our Firm has a team of highly skilled and experienced lawyers who specialize in various areas of the law.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end progress step item -->
+                            <!-- start process step item -->
+                            <div class="col-12 p-0 process-step-style-02 wow animate__fadeIn" data-wow-delay="0.2s">
+                                <div class="process-step-item">
+                                    <div class="process-step-icon-wrap">
+                                        <div
+                                            class="process-step-icon text-center border-all border-color-dark-gray border-width-2px bg-dark-gray alt-font font-weight-500">
+                                            2</div>
+                                        <span class="process-step-item-box-bfr bg-medium-gray"></span>
+                                    </div>
+                                    <div class="process-content last-paragraph-no-margin">
+                                        <span
+                                            class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Reputation
+                                        </span>
+                                        <p class="w-60 md-w-80 xs-w-100">We have a stellar reputation within the legal community and among our clients. Our track record of success speaks for itself.
+                                            </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end process step item -->
+                            <!-- start process step item -->
+                            <div class="col-12 p-0 process-step-style-02 wow animate__fadeIn" data-wow-delay="0.3s">
+                                <div class="process-step-item">
+                                    <div class="process-step-icon-wrap">
+                                        <div
+                                            class="process-step-icon text-center border-all border-color-dark-gray border-width-2px bg-dark-gray alt-font font-weight-500">
+                                            3</div>
+                                    </div>
+                                    <div class="process-content last-paragraph-no-margin">
+                                        <span
+                                            class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Results-driven
+                                            </span>
+                                        <p class="w-60 md-w-80 xs-w-100">We are committed to achieving the best possible outcome for our clients. We work tirelessly to ensure that your legal matter is resolved in the most favorable manner possible.
+                                            </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end process step item -->
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 offset-xl-1 wow animate__fadeInRight">
+                        <div class="outside-box-right position-relative">
+                            <img src="{% static 'client/img/abt.png' %}" class="overflow-hidden" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="sm-overflow-visible bg-light-gray wow animate__fadeIn">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-7 col-lg-6 text-center">
+                        <span class="d-block text-fast-dark-gray margin-15px-bottom text-large">Love to work together</span>
+                        <h5 class="text-extra-dark-gray alt-font font-weight-500 d-inline-block letter-spacing-minus-1">
+                            Are you ready to work with us? Visit Our Firm.</h5>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 text-center">
+                        <a href="/client/contact" class="btn btn-extra-large btn-fast-blue btn-rounded d-table d-lg-inline-block lg-margin-15px-bottom md-margin-auto-lr">Let's work with us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+    </div>
+
+
+
+{% endblock %}

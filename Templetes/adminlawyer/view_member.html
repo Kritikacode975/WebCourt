@@ -1,0 +1,61 @@
+{% extends 'adminlawyer/layout.html' %}
+
+{% block content %}
+
+<main class="content">
+<div class="container-fluid p-0">
+
+					
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Members </h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of Members</h6>
+								</div>
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" style="width: 100%;">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Email</th>
+												<th>Contact</th>
+												<th>Username</th>
+												<th>Qualification</th>
+												
+												<!-- <th>Experience<br>(Years)</th> -->
+												
+												<th> </th>
+												<th> </th>
+												<th> </th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for row in result %}
+												<tr>
+													<td>{{row.lawyer_name}}</td>
+													<td>{{row.email}}</td>
+													<td>{{row.contact}}</td>
+													<td>{{row.username}}</td>
+													<td>{{row.qualification}}</td>
+													
+													<!-- <td>{{row.experience}}</td> -->
+													
+													<!-- <td>{{row.status}}</td> -->
+													<!-- <td>{{row.state}}</td> -->
+													<!-- <td><a href="/adminlawyer/view/{{row.id}}">View</a></td> -->
+													<td><a href="/adminlawyer/detail_member/{{row.id}}">View</a></td>
+													<td><a href="/adminlawyer/lawyer_delete/{{row.id}}">delete</a></td>
+													<td><a href="/adminlawyer/lawyer_edit/{{row.id}}">edit</a></td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div></main>
+{% endblock %}

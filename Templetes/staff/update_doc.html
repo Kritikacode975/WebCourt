@@ -1,0 +1,64 @@
+{% extends 'staff/layout.html' %}
+
+{% block content %}
+
+
+<main class="content">
+				<div class="container-fluid p-0">
+<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Update Document</h5>
+									<h6 class="card-subtitle text-muted">All the Details are Required to be filled !</h6>
+								</div>
+								<div class="card-body">
+									<form method="post" action="/staff/doc_store" enctype="multipart/form-data">
+										<div class="row">
+											{% csrf_token %}
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Document Title : </label>
+												<input type="text" class="form-control" id="inputEmail4" name="title" value="{{result.title}}" placeholder="Enter Document Title">
+											</div>
+
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputAddress">Document : </label>
+												<input type="file" class="form-control" id="inputAddress" name="document" placeholder="Select Document">
+											</div>
+
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Client : </label>
+											<select id="" name="client" class="form-control">
+													<option>--Select Client--</option>
+									                {% for u in client %}
+														<option value="{{u.client_id}}" {% if u.client_id == u.id %} selected {% endif %}>{{u.client_name}}</option>
+													{% endfor %}
+              								</select>
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Case : </label>
+											<select id="" name="cases" class="form-control">
+													<option>--Select Case--</option>
+									                {% for w in cases %}
+														<option value="{{w.cases_id}}" {% if w.cases_id == w.id %} selected {% endif %}>{{w.title}}</option>
+													{% endfor %}
+              								</select>
+										</div>
+
+
+										<div class="mb-3">
+												<label class="form-label" for="inputEmail4">Description : </label>
+												<textarea class="form-control" name="description" rows="2" placeholder="Add Description">{{result.description}}</textarea>
+											</div>
+
+										
+										</div>
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div></main>
+{% endblock %}

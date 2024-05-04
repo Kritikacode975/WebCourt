@@ -1,0 +1,51 @@
+{% extends 'user/layout.html' %}
+
+{% block content %}
+
+
+<div class="container-fluid py-5">
+        <div class="container py-5" style="border: 1px solid grey; border-radius: 5px;">
+            <div class="text-center pb-2">
+                
+                <h1 class="mb-4">Give As A Feedback</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 mb-5 mb-lg-0">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="form-row">
+                                <div class="col-sm-12 control-group">
+                                    <select class="custom-select px-4" style="height: 50px;">
+                                        <option selected>Select Case</option>
+                                        <option value="1">Service 1</option>
+                                        <option value="2">Service 1</option>
+                                        <option value="3">Service 1</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-12 control-group" style=" padding-top: 9px; padding-left: 15px;">                                   
+                                    <label style="font-size: 20px;">Give Rating     : </label>
+                                    <input type="radio" name="rating" value="1" style="margin-left: 18px;"><label style="font-size: 18px; padding-left: 5px;">1</label>
+                                    <input type="radio" name="rating" value="2" style="margin-left: 18px;"><label style="font-size: 18px; padding-left: 5px;">2</label>
+                                    <input type="radio" name="rating" value="3" style="margin-left: 18px;"><label style="font-size: 18px; padding-left: 5px;">3</label>
+                                    <input type="radio" name="rating" value="4" style="margin-left: 18px;"><label style="font-size: 18px; padding-left: 5px;">4</label>
+                                    <input type="radio" name="rating" value="5" style="margin-left: 18px;"><label style="font-size: 18px; padding-left: 5px;">5</label>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="control-group">
+                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="btn btn-primary btn-block" type="submit" id="sendMessageButton">Send Feedback</button>
+                            </div>
+                        </form>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

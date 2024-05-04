@@ -1,0 +1,70 @@
+{% extends 'staff/layout.html' %}
+
+{% block content %}
+
+
+<main class="content">
+				<div class="container-fluid p-0">
+<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Add Hearing Date</h5>
+									<h6 class="card-subtitle text-muted">All the Details are Required to be filled !</h6>
+								</div>
+								<div class="card-body">
+									<form method="post" action="/staff/date_store" enctype="multipart/form-data">
+										<div class="row">
+											{% csrf_token %}
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Select Date : </label>
+												<input type="date" class="form-control" id="date" name="date" placeholder="Enter Document Title">
+											</div>
+
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputAddress">Remarks : </label>
+												<textarea class="form-control" name="remarks" rows="2" placeholder="Add Remarks"></textarea>
+											</div>
+
+
+											<div class="mb-3 col-md-6" style="display: none;">
+												<label class="form-label" for="inputAddress">Case : </label>
+												<input type="text" class="form-control" id="cases" name="cases" value="{{result.id}}" readonly>
+											</div>
+
+
+										<!-- <div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Client : </label>
+											<select id="" name="client" class="form-control">
+													<option>--Select Client--</option>
+									                {% for u in client %}
+														<option value="{{u.id}}">{{u.client_name}}</option>
+													{% endfor %}
+              								</select>
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Case : </label>
+											<select id="" name="cases" class="form-control">
+													<option>--Select Case--</option>
+									                {% for w in cases %}
+														<option value="{{w.id}}" {% if w.client_id == u.id %} value="{{w.title}}" {% endif %}>{{w.title}}</option>
+													{% endfor %}
+              								</select>
+										</div> -->
+
+
+										<div class="mb-3">
+												<label class="form-label" for="inputEmail4">Description : </label>
+												<textarea class="form-control" name="description" rows="2" placeholder="Add Description"></textarea>
+											</div>
+
+										
+										</div>
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div></main>
+{% endblock %}

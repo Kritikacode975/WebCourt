@@ -1,0 +1,130 @@
+{% extends 'staff/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+    
+<main class="content">
+        <div class="container-fluid p-0">
+
+          <div class="row mb-2 mb-xl-3">
+            <div class="col-auto d-none d-sm-block">
+              <h3>Dashboard</h3>
+            </div>
+
+            
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+              <div class="card illustration flex-fill">
+                <div class="card-body p-0 d-flex flex-fill">
+                  <div class="row g-0 w-100">
+                    <div class="col-6">
+                      <div class="illustration-text p-3 m-1">
+                        <h4 class="illustration-text">Welcome Back!</h4>
+                        <p class="mb-0">WEBCOURT</p>
+                      </div>
+                    </div>
+                    <div class="col-6 align-self-end text-end">
+                      <img src="{% static 'adminlawyer/img/illustrations/customer-support.png' %}" alt="Customer Support" class="img-fluid illustration-img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+              <div class="card flex-fill">
+                <div class="card-body py-4">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                      <h3 class="mb-2">{{case}}</h3>
+                      <p class="mb-2" style="font-size: 1.3rem;">Total Cases</p>
+                      
+                    </div>
+                    <div class="d-inline-block ms-3">
+                      <div class="stat">
+                        <i class="align-middle text-success" data-feather="briefcase"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+              <div class="card flex-fill">
+                <div class="card-body py-4">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                      <h3 class="mb-2">{{doc}}</h3>
+                      <p class="mb-2" style="font-size: 1.3rem;">Total Documents</p>
+                      
+                    </div>
+                    <div class="d-inline-block ms-3">
+                      <div class="stat">
+                        <i class="align-middle text-danger" data-feather="book-open"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+              <div class="card flex-fill">
+                <div class="card-body py-4">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                      <h3 class="mb-2">{{client}}</h3>
+                      <p class="mb-2" style="font-size: 1.3rem;">Total Clients</p>
+        
+                    </div>
+                    <div class="d-inline-block ms-3">
+                      <div class="stat">
+                        <i class="align-middle text-info" data-feather="users"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+              <div class="card flex-fill">
+                <div class="card-body py-4">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                      <h3 class="mb-2">{{lawyer}}</h3>
+                      <p class="mb-2" style="font-size: 1.3rem;">Team Members</p>
+        
+                    </div>
+                    <div class="d-inline-block ms-3">
+                      <div class="stat">
+                        <i class="align-middle text-info" data-feather="grid"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+              <div class="card flex-fill">
+                <div class="card-body py-4">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                      <h3 class="mb-2">{{app}}</h3>
+                      <p class="mb-2" style="font-size: 1.3rem;">Appointments</p>
+        
+                    </div>
+                    <div class="d-inline-block ms-3">
+                      <div class="stat">
+                        <i class="align-middle text-info" data-feather="calendar"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'adminlawyer/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<main class="content">
+	<div class="container-fluid p-0">
+		<!-- <div class="row"> -->
+			<div class="col-12">
+				<div class="card">
+					
+					<div class="card-header">
+						<h5 class="card-title">All Deatails of Case</h5>
+					</div>
+					<div class="card-body">
+						<form method="post" action="/adminlawyer/result_store/{{res.id}}" enctype="multipart/form-data">
+							{% csrf_token %}
+							<div class="row">
+								{% csrf_token %}
+								<div class="mb-3 col-md-4">
+									<label class="form-label" for="inputState">Case Result : </label>
+									<select id="result" name="result" class="form-control">
+										<option>--Select Result--</option>
+						                <option value="Win">Win</option>
+						                <option value="Loss">Loss</option>
+										</select>
+								</div>
+
+								<div class="mb-3 col-md-4">
+									<label class="form-label" for="inputState">Case Status : </label>
+									<select id="status" name="status" class="form-control">
+										<option>--Select Status--</option>
+						                <option {% if res.status == "Running" %} selected {% endif %}>Running</option>
+						                <option {% if res.status == "Closed" %} selected {% endif %}>Closed</option>
+										</select>
+								</div>
+
+								<div class="mb-3">
+									<label class="form-label" for="inputEmail4">Remarks : </label>
+									<textarea class="form-control" name="remarks" rows="2" placeholder="Add Description"></textarea>
+								</div>
+
+							
+							</div>
+							<button type="submit" class="btn btn-primary" style="font-size:1rem;">Submit</button>
+						
+					
+						</form>
+					</div>
+				</div>
+			</div>
+		<!-- </div> -->
+	</div>
+</main>
+
+
+{% endblock %}

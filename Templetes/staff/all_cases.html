@@ -1,0 +1,181 @@
+{% extends 'staff/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<main class="content">
+<div class="container-fluid p-0">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title">All Deatails of Case</h5>
+					</div>
+					<div class="card-body">
+						<form method="post" action="">
+							{% csrf_token %}
+							<div class="row">
+
+							<div class="col-12">
+							<div class="card">
+								<!-- <div class="card-header">
+									<h5 class="card-title">Cases DataTables</h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of clients</h6>
+								</div> -->
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" style="font-size: 16px;">
+										
+										<tbody>
+
+										
+													<tr >
+														<th style="border-right: 1px lightgrey solid">Case ID</th>
+														<td>{{result.id}}</td>
+														
+													</tr>
+												
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Case Title</th>
+														<td>{{result.title}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Case Description</th>
+														<td>{{result.description}}</td>
+													</tr>
+													
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Case Type</th>
+														<td>{{result.case_type}}</td>
+													</tr>
+
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Client Name</th>
+														<td>{{result.client}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Lawyer Name</th>
+														<td>{{result.lawyer}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Registration Date</th>
+														<td>{{result.case_reg_date}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Judge Name</th>
+														<td>{{result.judge}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Poilice Station</th>
+														<td>{{result.police_station}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Court</th>
+														<td>{{result.court}}</td>
+													</tr>
+
+													<tr>
+														<th style="border-right: 1px lightgrey solid">Case Status</th>
+														<td>{{result.status}}</td>
+													</tr>
+
+													
+														
+														
+													
+														
+										</tbody>
+									</table>
+									<a href="/staff/add_doc/{{result.id}}" class="btn btn-primary" style="font-size:1rem;">Add Document</a>
+									<a href="/staff/view_doc/{{result.id}}" class="btn btn-primary" style="font-size:1rem; margin-left: 10px;">View Document(s)</a>
+									<a href="/staff/add_date/{{result.id}}" class="btn btn-primary" style="font-size:1rem; margin-left: 10px;">Add Hearing Date</a>
+									<a href="/staff/view_date/{{result.id}}" class="btn btn-primary" style="font-size:1rem; margin-left: 10px;">View Hearing Date</a>
+								</div>
+							</div>
+						</div>
+
+
+								
+									<!-- <div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Case ID : </label>
+										<input type="text" class="form-control" name="title" value="{{result.id}}" readonly>
+										
+									</div>
+					
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Case Title : </label>
+										<input type="text" class="form-control" name="title" value="{{result.title}}" readonly>
+										
+									</div>
+
+
+									<div class="mb-3 col-md-12">
+										<label class="form-label" for="inputAddress">Case Description : </label>
+										<textarea class="form-control" readonly>{{result.description}}</textarea>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Case Type : </label>
+										<input type="text" class="form-control" name="type" value="{{result.case_type}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Judge Name : </label>
+										<input type="text" class="form-control" name="type" value="{{result.judge}}" readonly>
+									</div>
+
+										
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Police Station : </label>
+										<input type="text" class="form-control" name="type" value="{{result.police_station}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Court : </label>
+										<input type="text" class="form-control" name="type" value="{{result.court}}" readonly>
+									</div>
+
+										
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Case Status : </label>
+										<input type="text" class="form-control" name="type" value="{{result.status}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Registration Date : </label>
+										<input type="text" class="form-control" name="type" value="{{result.case_reg_date}}" readonly>
+									</div>
+
+										
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Client Name : </label>
+										<input type="text" class="form-control" name="type" value="{{result.client}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Lawyer Name : </label>
+										<input type="text" class="form-control" name="type" value="{{result.lawyer}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-4">
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;">Add Document</button>
+									</div> -->
+
+								
+							</div>
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+{% endblock %}

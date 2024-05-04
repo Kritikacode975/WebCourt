@@ -1,0 +1,62 @@
+{% extends 'adminlawyer/layout.html' %}
+
+{% block content %}
+
+
+<main class="content">
+				<div class="container-fluid p-0">
+<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Add New Document</h5>
+									<h6 class="card-subtitle text-muted">All the Details are Required to be filled !</h6>
+								</div>
+								<div class="card-body">
+									<form>
+										<div class="row">
+											<div class="mb-3">
+											<label class="form-label" for="inputAddress">Document : </label>
+											<input type="file" class="form-control" id="inputAddress" placeholder="">
+										</div>
+
+										<div class="mb-3">
+											<label class="form-label" for="inputAddress">Case : </label>
+											<select id="" class="form-control">
+													<option>--Select Case--</option>
+									                <option>Harsh Shah's Penalties</option>
+									                <option>Jenny Pysical Abuse Study</option>
+									                <option>Domestic Violence on Mittal</option>
+									                <option>Mitali's Gaurdianship 2010</option>
+									                <option>Bail Application for Sunitra</option>
+
+              								</select>
+										</div>
+
+										<div class="mb-3">
+											<label class="form-label" for="inputAddress">Case Type : </label>
+											<select id="" class="form-control">
+													<option>--Select Type--</option>
+									                <option>Income Tax Appeal</option>
+									                <option>CRIMINAL APPEAL</option>
+									                <option>DIVORCE PETITION</option>
+									                <option>Guardianship</option>
+									                <option>Bail Application</option>
+
+              								</select>
+										</div>
+
+										<div class="mb-3">
+												<label class="form-label" for="inputEmail4">Description : </label>
+												<input type="text" class="form-control" id="inputEmail4" placeholder="">
+											</div>
+
+										
+										</div>
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div></main>
+{% endblock %}

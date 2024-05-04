@@ -1,0 +1,182 @@
+{% extends 'adminlawyer/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<main class="content">
+<div class="container-fluid p-0">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title">All Deatails of Member</h5>
+					</div>
+					<div class="card-body">
+						<form method="post" action="">
+							{% csrf_token %}
+							<div class="row">
+
+							<div class="col-12">
+							<div class="card">
+								<!-- <div class="card-header">
+									<h5 class="card-title">Cases DataTables</h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of clients</h6>
+								</div> -->
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" style="font-size: 16px;">
+										
+										<tbody>
+
+										
+													<tr>
+													
+														<td rowspan="2" width="30%;" style="border-right: 1px lightgrey solid; border-top: 1px lightgrey solid; padding-left: 30px;">
+															<img src="/media/staff/{{result.photo}}" alt="Stacie Hall" style="height: 128px; width: 128px; border-radius: 50%;" />
+														</td>
+														<td style="font-weight: bolder; width: 25%; border-top: 1px lightgrey solid; padding-left: 30px;">Staff Name</td>
+														<td style="width: 45%; border-top: 1px lightgrey solid;">{{result.lawyer_name}}</td>
+														<td style="border-top: 1px lightgrey solid;"> </td>
+														
+													</tr>
+												
+													<tr>
+														<td style="font-weight: bolder; width: 25%; padding-left: 30px;">Staff Email</td>
+														<td>{{result.email}}</td>
+														<td> </td>
+														
+													</tr>
+
+													<tr>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Staff Address</td>
+														<td style="padding-left: 30px; height: 45px;" colspan="2">{{result.address}}</td>
+														<td> </td>
+														
+													</tr>
+
+													<tr>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Username</td>
+														<td style="padding-left: 30px; border-right: 1px lightgrey solid; height: 45px;">{{result.username}}</td>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Password</td>
+														<td style="text-align: left; height: 45px;" >{{result.password}}</td>
+													</tr>
+
+													<tr>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Qualification</td>
+														<td style="padding-left: 30px; border-right: 1px lightgrey solid; height: 45px;">{{result.qualification}}</td>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Experience</td>
+														<td style="text-align: left; height: 45px;" >{{result.experience}}</td>
+													</tr>
+
+													<tr>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Contact</td>
+														<td style="padding-left: 30px; border-right: 1px lightgrey solid; height: 45px;">{{result.contact}}</td>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Gender</td>
+														<td style="text-align: left; height: 45px;" >{{result.gender}}</td>
+														
+													</tr>
+
+
+													<tr>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Registration Date</td>
+														<td style="padding-left: 30px; border-right: 1px lightgrey solid; height: 45px;">{{result.registration_date}}</td>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">City</td>
+														<td style="text-align: left; height: 45px;">{{result.city}}</td>
+														
+														
+													</tr>
+
+													<tr>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">State</td>
+														<td style="padding-left: 30px; border-right: 1px lightgrey solid; height: 45px;" >{{result.state}}</td>
+														<td style="font-weight: bolder; padding-left: 30px; height: 45px;">Zipcode</td>
+														<td style="text-align: left; height: 45px;">{{result.zipcode}}</td>
+														
+														
+													</tr>
+										</tbody>
+									</table>
+									
+									
+								</div>
+							</div>
+						</div>
+
+
+								
+									<!-- <div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Case ID : </label>
+										<input type="text" class="form-control" name="title" value="{{result.id}}" readonly>
+										
+									</div>
+					
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Case Title : </label>
+										<input type="text" class="form-control" name="title" value="{{result.title}}" readonly>
+										
+									</div>
+
+
+									<div class="mb-3 col-md-12">
+										<label class="form-label" for="inputAddress">Case Description : </label>
+										<textarea class="form-control" readonly>{{result.description}}</textarea>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Case Type : </label>
+										<input type="text" class="form-control" name="type" value="{{result.case_type}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Judge Name : </label>
+										<input type="text" class="form-control" name="type" value="{{result.judge}}" readonly>
+									</div>
+
+										
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Police Station : </label>
+										<input type="text" class="form-control" name="type" value="{{result.police_station}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Court : </label>
+										<input type="text" class="form-control" name="type" value="{{result.court}}" readonly>
+									</div>
+
+										
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Case Status : </label>
+										<input type="text" class="form-control" name="type" value="{{result.status}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Registration Date : </label>
+										<input type="text" class="form-control" name="type" value="{{result.case_reg_date}}" readonly>
+									</div>
+
+										
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Client Name : </label>
+										<input type="text" class="form-control" name="type" value="{{result.client}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-6">
+										<label class="form-label" for="inputAddress">Lawyer Name : </label>
+										<input type="text" class="form-control" name="type" value="{{result.lawyer}}" readonly>
+									</div>
+
+									<div class="mb-3 col-md-4">
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;">Add Document</button>
+									</div> -->
+
+								
+							</div>
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+{% endblock %}

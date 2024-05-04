@@ -1,0 +1,52 @@
+{% extends 'staff/layout.html' %}
+{% load static %}
+{% block content %}
+
+<main class="content">
+<div class="container-fluid p-0">
+
+					
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Hearing Dates</h5>
+									<h6 class="card-subtitle text-muted">Stored all the requaired details of Hearing Date</h6>
+								</div>
+								<div class="card-body">
+									<table id="datatables-reponsive" class="table table-striped" >
+										
+										<tbody>
+
+											<tr>
+												<td>Case ID</td>
+												<td>Hearing Date</td>
+												<td>Remarks</td>
+												<td>Description</td>
+												<td>Status</td>
+												<td></td>
+												
+											</tr>
+
+											{% for row in result %}
+												<tr>
+													<td>{{row.id}}</td>
+													<td>{{row.next_hearing_date}}</td>
+													<td>{{row.remarks}}</td>
+													<td>{{row.description}}</td>
+													<td>{{row.status}}</td>
+													
+													<td><a href="/staff/date_delete_all/{{row.id}}">Complete</a></td>
+													
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div></main>
+{% endblock %}

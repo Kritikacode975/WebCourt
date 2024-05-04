@@ -1,0 +1,140 @@
+{% extends 'adminlawyer/layout.html' %}
+
+{% block content %}
+
+
+<main class="content">
+				<div class="container-fluid p-0">
+<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Update Member</h5>
+									<h6 class="card-subtitle text-muted">All the Details are Required to be filled !</h6>
+								</div>
+								<div class="card-body">
+									<form method="post" action="/adminlawyer/lawyer_update/{{result.id}}" enctype="multipart/form-data">
+										{% csrf_token %}
+										<div class="row">
+											<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Full Name : </label>
+											<input type="text" class="form-control" name="lawyer_name" id="inputAddress" placeholder="" value="{{result.lawyer_name}}">
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Email : </label>
+											<input type="email" class="form-control" id="inputAddress" name="email" placeholder="" value="{{result.email}}">
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Address : </label>
+											<textarea class="form-control" name="address" rows="2" placeholder="Add Address">{{result.address}}</textarea>
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">Contact Number : </label>
+												<input type="tel" class="form-control" id="inputPassword4" name="contact" placeholder="" value="{{result.contact}}">
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">User Name : </label>
+											<input type="text" class="form-control" id="inputAddress" name="username" placeholder="" value="{{result.username}}">
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">Photo : </label>
+												<input type="file" class="form-control" id="inputPassword4" name="photo" placeholder="">
+										</div>	
+
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Qualification : </label>
+												<input type="text" class="form-control" id="inputEmail4" name="qualification" placeholder="" value="{{result.qualification}}">
+											</div>
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">Experience (Years) : </label>
+												<input type="number" class="form-control" name="experience" id="inputZip" value="{{result.experience}}">
+											</div>
+
+
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Password : </label>
+												<input type="password" class="form-control" id="inputEmail4" name="password" placeholder="" id="myInput" value="{{result.password}}">
+												<input type="checkbox" class="form-check-input" onclick="myFunction()">  Show Password
+											</div>
+
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">Gender : </label>
+												<div>
+			                                        <label class="form-check form-check-inline">
+			                                        <input class="form-check-input" type="radio" name="gender" value="Male" style="font-size:1rem;" {% if result.gender == 'Male' %} checked {% endif %}>
+			                                        <span class="form-check-label" style="font-size:1rem;">
+			                                          Male
+			                                        </span>
+			                                        </label>
+
+			                                        <label class="form-check form-check-inline">
+			                                        <input class="form-check-input" type="radio" name="gender" value="Female" style="font-size:1rem;" {% if result.gender == 'Female' %} checked {% endif %}>
+			                                        <span class="form-check-label" style="font-size:1rem;">
+			                                          Female
+			                                        </span>
+			                                        </label>
+
+			                                        <label class="form-check form-check-inline">
+			                                        <input class="form-check-input" type="radio" name="gender" value="Other" style="font-size:1rem;" {% if result.gender == 'Other' %} checked {% endif %}>
+			                                        <span class="form-check-label" style="font-size:1rem;"> 
+			                                          Other
+			                                        </span>
+			                                        </label>
+			                                    </div>
+											</div>
+
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">Date of Birth : </label>
+												<input type="date" class="form-control" name="dob" value="{{result.dob|date:'Y-m-d'}}" id="inputZip">
+											</div>
+
+
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputZip">Registration Date : </label>
+												<input type="date" class="form-control" id="inputZip" value="{{result.registration_date|date:'Y-m-d'}}" name="registration_date">
+											</div>
+										<!-- <div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Age : </label>
+												<input type="number" class="form-control" id="inputEmail4" name="age" placeholder="">
+											</div> -->
+											
+											<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputPassword4">State : </label>
+												<select id="" name="state" class="form-control select2" data-toggle="select2">
+													
+									                {% for b in state %}
+														<option value="{{b.id}}" 
+														{% if result.state_id == b.id %} selected {% endif %}>{{b.state_name}}</option>
+													{% endfor %}
+              									</select>
+											</div>
+
+											<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputEmail4">City : </label>
+												<select id="" name="city" class="form-control select2" data-toggle="select2">
+													
+									                {% for u in city %}
+														<option value="{{u.id}}" 
+														{% if result.city_id == u.id %} selected {% endif %}>{{u.city_name}}</option>
+													{% endfor %}
+              									</select>
+											</div>
+
+											<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputPassword4">ZIP Code : </label>
+												<input type="number" class="form-control" id="" name="zipcode" value="{{result.zipcode}}">
+											</div>
+										
+										</div>
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;">Update</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div></main>
+{% endblock %}

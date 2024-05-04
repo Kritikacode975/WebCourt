@@ -1,0 +1,122 @@
+{% extends 'adminlawyer/layout.html' %}
+
+{% block content %}
+
+
+<main class="content">
+				<div class="container-fluid p-0">
+<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Update Case</h5>
+									<h6 class="card-subtitle text-muted">All the Details are Required to be filled !</h6>
+								</div>
+								<div class="card-body">
+									<form method="post" action="/adminlawyer/case_update/{{result.id}}" enctype="multipart/form-data">
+
+										<div class="row">
+											{% csrf_token %}
+											<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Case Title : </label>
+											<input type="text" class="form-control" id="inputAddress" name="title" placeholder="Enter Case Title" value="{{result.title}}">
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Case Type : </label>
+												<input type="text" class="form-control" id="inputEmail4" name="case_type" placeholder="Enter Case Type" value="{{result.case_type}}">
+										</div>
+
+										<div class="mb-3 col-md-8">
+											<label class="form-label" for="inputAddress">Case Description : </label>
+											<textarea class="form-control" rows="2" name="description" placeholder="Add Case Description">{{result.title}}</textarea>
+										</div>
+
+										<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputZip">Registration Date : </label>
+												<input type="date" class="form-control" id="inputZip" value="{{result.case_reg_date|date:'Y-m-d'}}" name="case_reg_date">
+										</div>
+							
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Lawyer Name : </label>
+												<select id="lawyer" name="lawyer" class="form-control select2" data-toggle="select2">
+													
+									                {% for u in lawyer %}
+														<option value="{{u.id}}" 
+														{% if result.lawyer_id == u.id %} selected {% endif %}>{{u.lawyer_name}}</option>
+													{% endfor %}
+              									</select>
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputPassword4">Client Name : </label>
+											<select id="client" name="client" class="form-control select2" data-toggle="select2">
+													
+									                {% for u in client %}
+														<option value="{{u.id}}" 
+														{% if result.client_id == u.id %} selected {% endif %}>{{u.client_name}}</option>
+													{% endfor %}
+              									</select>
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Judge Name : </label>
+												<input type="text" class="form-control" id="inputEmail4" name="judge" placeholder="Enter Judge Name" value="{{result.judge}}">
+										</div>
+
+										<div class="mb-2 col-md-6">
+												<label class="form-label" for="inputCity">Police Station : </label>
+												<input type="text" class="form-control" id="police_station" name="police_station" value="{{result.police_station}}">
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Court : </label>
+												<input type="text" class="form-control" id="inputEmail4" name="court" placeholder="Enter Court Name" value="{{result.court}}">
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">FIR Copy : </label>
+												<input type="file" class="form-control" id="inputPassword4" name="fir_copy" placeholder="">
+										</div>
+
+										<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputPassword4">State : </label>
+												<select id="state" name="state" class="form-control select2" data-toggle="select2">
+													
+									                {% for b in state %}
+														<option value="{{b.id}}" 
+														{% if result.state_id == b.id %} selected {% endif %}>{{b.state_name}}</option>
+													{% endfor %}
+              									</select>
+											</div>	
+
+										<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputEmail4">City : </label>
+												<select id="city" name="city" class="form-control select2" data-toggle="select2">
+													
+									                {% for u in city %}
+														<option value="{{u.id}}" 
+														{% if result.city_id == u.id %} selected {% endif %}>{{u.city_name}}</option>
+													{% endfor %}
+              									</select>
+											</div>
+											
+
+											<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputState">Case Status : </label>
+												<select id="status" name="status" class="form-control">
+													<option>--Select Status--</option>
+									                <option {% if result.status == "Running" %} selected {% endif %}>Running</option>
+									                <option {% if result.status == "Closed" %} selected {% endif %}>Closed</option>
+              									</select>
+											</div>
+											
+										</div>
+
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;">Update</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div></main>
+{% endblock %}

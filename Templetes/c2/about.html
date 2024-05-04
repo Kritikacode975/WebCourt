@@ -1,0 +1,197 @@
+{% extends 'client/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-caption">
+                        <h2 class="page-title">About Us</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">About Us</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="widget widget-contact">
+                        <!-- widget search 
+                        <h3 class="widget-title">Contact Info</h3>
+                        <address>
+                          <strong>Flower.</strong><br>
+                          1355 Market Street, Suite 900<br>
+                          San Francisco, CA 94103<br>
+                          <abbr title="Phone">P:</abbr> (123) 456-7890
+                        </address>
+                        <address>
+                          <strong>Contact Name</strong><br>
+                          <a href="mailto:#">yourdomain@gmail.com</a>
+                        </address>
+                         
+                    </div>
+                    <!-- /.widget search -->
+                    <!-- <div class="widget widget-social">
+
+                        <div class="social-circle">
+                             <a href="#" class="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                       
+                    </div>
+                </div> --> 
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="row">
+                        <div class="container-fluid py-5">
+                            <div class="container py-5">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <img  src="{% static 'client/images/about.jpg' %}" alt="" height="400px" width="440px">
+                                    </div>
+                                    <div class="col-lg-7 mt-4 mt-lg-0">
+                                        <h2 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block" style="width: 350px; margin-left: -205px;"></h2>
+                                       <br> <h6 class="text-uppercase">Learn About Us</h6>
+                                        <br>
+                                        <h1 class="mb-4 position-relative text-center text-secondary">We Provide Reliable And Effective Legal Services</h1>
+                                        <!-- <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p> -->
+                                        <p>We are a team of experienced lawyers dedicated to providing our clients with top-notch legal services in a variety of practice areas. Our mission is to help our clients achieve their legal goals with excellence, professionalism, and integrity.
+
+                                            Our law firm is built on a foundation of excellence, professionalism, and integrity. We hold ourselves to the highest ethical standards and are committed to providing our clients with the best possible legal services. We look forward to working with you to achieve your legal goals.
+                                            
+                                            <!-- At our law firm, we believe in putting our clients first. We understand that every legal matter is unique, and we take the time to listen to our clients' concerns and develop customized solutions that fit their needs. Our attorneys have a wealth of experience in a wide range of practice areas, from corporate law and intellectual property to family law and estate planning.
+                                            
+                                            We take pride in being accessible and approachable to our clients. Our attorneys are committed to keeping our clients informed throughout the legal process and working collaboratively to achieve the best possible outcomes. We also understand that legal issues can be stressful, and we strive to provide our clients with compassionate support and guidance during difficult times.
+                                            
+                                            
+                                            We understand that navigating the legal system can be overwhelming, but we are here to help. Let our experienced attorneys guide you through the process and advocate for your rights every step of the way. Contact us today to schedule a consultation and learn how we can assist you with your legal needs.</p>
+                                            -->
+                                            <br><br><a href="/client/about2" class="btn btn-default">Learn More</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br>
+
+                        <!-- <div class="container-fluid py-5">
+                            <div class="container py-5">
+                                <div class="row">
+                                    <div class="col-lg-6" style="min-height: 500px;">
+                                        <div class="position-relative h-100 rounded overflow-hidden">
+                                            <img class="position-absolute w-100 h-100" src="images/feature.jpg" style="object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 pt-5 pb-lg-5">
+                                        <div class="feature-text bg-white rounded p-lg-5">
+                                            <h6 class="text-uppercase">Our Features</h6>
+                                            <h1 class="mb-4">Why Choose Us</h1>
+                                            <div class="d-flex mb-4">
+                                                <!-- <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;"> 
+                                                    <h5 class="text-secondary m-0">01</h5>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <h5>Best Law Practices</h5>
+                                                    <!-- <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p> 
+                                                </div>
+                                            </div>
+                                            <div class="d-flex mb-4">
+                                                <!-- <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;"> 
+                                                    <h5 class="text-secondary m-0">02</h5>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <h5>Efficiency & Trust</h5>
+                                                    <!-- <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p> 
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <!-- <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;"> 
+                                                    <h5 class="text-secondary m-0">03</h5>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <h5>Results You Deserve</h5>
+                                                    <!-- <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+
+
+
+
+
+                         <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
+                        <!--<h1>Appointment Form</h1>
+                        <p> Please complete the form below. We'll do everything we can to respond to you as quickly as possible.</p>
+                        <form method="post" action="/client/appointment_store">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="control-label" for="case">Select Case</label>
+                                    <select class="form-control" for="case" name="case">
+                                    {% for res in client %}
+                                        {% if res.user_id == user.id %}
+                                            {% for row in cases %}
+                                                {% if row.client_id == res.id %}     
+                                                    <option value="{{row.id}}">{{row.title}}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </select>
+                                    <!-- <input type="text" name="case" id="case" placeholder="" class="form-control"> 
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" for="phone">Date</label>
+                                    <input type="date" name="date" id="date" placeholder="" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" for="email">Time</label>
+                                    <input type="time" name="time" id="time" placeholder="" class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="control-label" for="Subject">Subject</label>
+                                    <input type="text" name="subject" id="Subject" placeholder="" class="form-control">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label" for="textarea">Message</label>
+                                            <textarea class="form-control" id="textarea" name="message" rows="6" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <button id="singlebutton" name="singlebutton" class="btn btn-default">Request Appointment</button>
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </form>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+{% endblock %}

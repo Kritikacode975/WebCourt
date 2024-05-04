@@ -1,0 +1,263 @@
+{% extends 'adminlawyer/layout.html' %}
+
+{% block content %}
+
+
+<main class="content">
+				<div class="container-fluid p-0">
+<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Add New Client</h5>
+									<h6 class="card-subtitle text-muted">All the Details are Required to be filled !</h6>
+								</div>
+								<div class="card-body">
+									<form method="post" id="demoForm" action="/adminlawyer/client_store" enctype="multipart/form-data" onsubmit="return validateForm()" novalidate>
+											{% csrf_token %}
+										<div class="row">
+											<div class="mb-3 col-md-6">
+											<label class="form-label">Full Name : </label>
+											<input type="text" class="form-control" pattern="[a-zA-Z\s]{4,50}" id="fullname" name="client_name" placeholder="e.g. Pratik Jaybhai Shah">
+											<div id="fullnameError" class="error"></div>
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Email : </label>
+											<input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="e.g. pratik@gmail.com">
+											<div id="emailError" class="error"></div>
+										</div>
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">Address : </label>
+											<textarea class="form-control" id="address" minlength="4" maxlength="255" name="address" rows="2" placeholder="104, Amulya Apartment, Nr. Shanti Hospital"></textarea>
+											<div id="addressError" class="error"></div>
+										</div>
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">Contact Number : </label>
+												<input type="tel" id="contactNumber" pattern="[0-9]{10}" class="form-control" id="inputPassword4" name="contact" placeholder="e.g. 9898136695">
+												<div id="contactNumberError" class="error"></div>
+										</div>	
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputAddress">User Name : </label>
+											<input type="text" class="form-control" id="username" name="username" placeholder="e.g. pratik123" pattern="[a-zA-Z0-9]{4,20}">
+											<div id="errormsg" class="error"></div>
+										</div>
+
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">Photo : </label>
+												<input type="file" class="form-control" id="photo" name="photo" accept="image/*" placeholder="" required>
+												<div id="photoError" class="error"></div>
+										</div>
+										
+
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Password : </label>
+												<input type="password" class="form-control" id="password" name="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="e.g. pratik123">
+												<div id="passworderror" class="error"></div>
+												<input type="checkbox" class="form-check-input" onclick="myFunction()">  Show Password
+											</div>
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputZip">Date of Birth : </label>
+												<input type="date" class="form-control" id="inputZip" name="dob" required>
+
+											</div>
+										
+										<!-- <div class="mb-3 col-md-6">
+												<label class="form-label" for="inputEmail4">Age : </label>
+												<input type="number" class="form-control" id="inputEmail4" name="age" placeholder="">
+										</div> -->
+										<div class="mb-3 col-md-6">
+												<label class="form-label" for="inputPassword4">Gender : </label>
+												<div>
+			                                        <label class="form-check form-check-inline">
+			                                        <input class="form-check-input" type="radio" name="gender" value="Male" style="font-size:1rem;" required>
+			                                        <span class="form-check-label" style="font-size:1rem;">
+			                                          Male
+			                                        </span>
+			                                        </label>
+
+			                                        <label class="form-check form-check-inline">
+			                                        <input class="form-check-input" type="radio" name="gender" value="Female" style="font-size:1rem;" required>
+			                                        <span class="form-check-label" style="font-size:1rem;">
+			                                          Female
+			                                        </span>
+			                                        </label>
+
+			                                        <label class="form-check form-check-inline">
+			                                        <input class="form-check-input" type="radio" name="gender" value="Other" style="font-size:1rem;" required>
+			                                        <span class="form-check-label" style="font-size:1rem;"> 
+			                                          Other
+			                                        </span>
+			                                        </label>
+			                                        
+			                                    </div>
+											</div>
+
+
+										<div class="mb-3 col-md-6">
+											<label class="form-label" for="inputPassword4">State : </label>
+											<select name="state" id="state" class="form-control select2" data-toggle="select2">
+												
+								            {% for u in state %}
+												<option value="{{u.id}}" >{{u.state_name}}</option>
+											{% endfor %}
+								          </select>
+								          <div id="genderError" class="error"></div>
+										</div>
+											
+
+										<div class="mb-3 col-md-4">
+											<label class="form-label" for="inputPassword4">City : </label>
+											<select name="city" class="form-control select2" data-toggle="select2">
+												
+								            {% for y in city %}
+												<option value="{{y.id}}" >{{y.city_name}}</option>
+											{% endfor %}
+								            </select>
+										</div>
+
+											<div class="mb-3 col-md-4">
+												<label class="form-label" for="inputPassword4">ZIP Code : </label>
+												<input type="number" class="form-control" id="zipcode" name="zipcode" pattern="[0-9]{6}" placeholder="e.g. 812481">
+												<div id="zipcodeError" class="error"></div>
+
+											</div>
+
+										
+										</div>
+										<button type="submit" class="btn btn-primary" style="font-size:1rem;" id="submit-btn" disabled>Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div></main>
+<script>
+      const usernameInput = document.getElementById("username");
+      const errorMsg = document.getElementById("error-msg");
+      const submitBtn = document.getElementById("submit-btn");
+      const passwordInput = document.getElementById("password");
+      const passwordErrorMsg = document.getElementById("password-error");
+      const fullnameInput = document.getElementById("fullname");
+      const emailInput = document.getElementById("email");
+      const contactNumberInput = document.getElementById("contactNumber");
+      const photoInput = document.getElementById("photo");
+      const zipcodeInput = document.getElementById("zipcode");
+  
+      function validateUsername() {
+        if (usernameInput.validity.patternMismatch) {
+          errormsg.textContent = "Username must be between 3 and 20 letters and only contains letters and numbers";
+          usernameInput.setCustomValidity("Username must be between 3 and 20 letters and only contains letters and numbers");
+        } else {
+          errormsg.textContent = "";
+          usernameInput.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && usernameInput.validity.valid && passwordInput.validity.valid && emailInput.validity.valid && contactNumberInput.validity.valid && photoInput.validity.valid && zipcodeInput.validity.valid) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validatePassword() {
+        if (passwordInput.validity.patternMismatch) {
+          passworderror.textContent = "Password must be between 8 and 20 letters and only contains letters and numbers";
+          passwordInput.setCustomValidity("patternMismatch must be between 8 and 20 letters and only contains letters and numbers");
+        } else {
+          passworderror.textContent = "";
+          passwordInput.setCustomValidity("");
+        } 
+        if (fullnameInput.validity.valid && usernameInput.validity.valid && passwordInput.validity.valid && emailInput.validity.valid && contactNumberInput.validity.valid && photoInput.validity.valid && zipcodeInput.validity.valid) {
+          submitBtn.disabled = false;
+        }
+        
+      }
+
+      function validateFullname() {
+        if (fullnameInput.validity.patternMismatch) {
+          fullnameError.textContent = "Full Name must be between 4 and 50 letters long and only contain letters";
+          fullnameInput.setCustomValidity("Full Name must be between 4 and 50 letters long and only contain letters");
+        } else {
+          fullnameError.textContent = "";
+          fullnameInput.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && usernameInput.validity.valid && passwordInput.validity.valid && emailInput.validity.valid && contactNumberInput.validity.valid && photoInput.validity.valid && zipcodeInput.validity.valid) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validateEmail() {
+        if (emailInput.validity.patternMismatch) {
+          emailError.textContent = "Please enter a valid email address";
+          emailInput.setCustomValidity("Please enter a valid email address");
+        } else {
+          emailError.textContent = "";
+          emailInput.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && usernameInput.validity.valid && passwordInput.validity.valid && emailInput.validity.valid && contactNumberInput.validity.valid && photoInput.validity.valid && zipcodeInput.validity.valid) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validateContactNumber() {
+        if (contactNumberInput.validity.patternMismatch) {
+          contactNumberError.textContent = "Contact number must be 10 digits long";
+          contactNumberInput.setCustomValidity("Contact number must be 10 digits long");
+        } else {
+          contactNumberError.textContent = "";
+          contactNumberInput.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && usernameInput.validity.valid && passwordInput.validity.valid && emailInput.validity.valid && contactNumberInput.validity.valid && photoInput.validity.valid && zipcodeInput.validity.valid) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validatePhoto() {
+        if (photoInput.validity.valueMissing) {
+          photoError.textContent = "Please select a photo.";
+          photoInput.setCustomValidity("Please select a photo.");
+        } else if (photoInput.validity.typeMismatch) {
+          photoError.textContent = "Only image files are allowed.";
+          photoInput.setCustomValidity("Only image files are allowed.");
+        } else {
+          photoError.textContent = "";
+          photoInput.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && usernameInput.validity.valid && passwordInput.validity.valid && emailInput.validity.valid && contactNumberInput.validity.valid && photoInput.validity.valid && zipcodeInput.validity.valid) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      function validateZipcode() {
+        const zipcodePattern = /^\d{6}$/;
+        if (!zipcodePattern.test(zipcodeInput.value)) {
+          zipcodeError.textContent = "Zip Code must be exactly 6 digits";
+          zipcodeInput.setCustomValidity("Zip Code must be exactly 6 digits");
+        } else {
+          zipcodeError.textContent = "";
+          zipcodeInput.setCustomValidity("");
+        }
+
+        if (fullnameInput.validity.valid && usernameInput.validity.valid && passwordInput.validity.valid && emailInput.validity.valid && contactNumberInput.validity.valid && photoInput.validity.valid && zipcodeInput.validity.valid) {
+          submitBtn.disabled = false;
+        }
+      }
+
+
+
+
+
+      usernameInput.addEventListener("input", validateUsername);
+      passwordInput.addEventListener("input", validatePassword);
+      fullnameInput.addEventListener("input", validateFullname);
+      emailInput.addEventListener("input", validateEmail);
+      contactNumberInput.addEventListener("input", validateContactNumber);
+      photoInput.addEventListener("input", validatePhoto);
+      zipcodeInput.addEventListener("input", validateZipcode);
+
+    </script>
+{% endblock %}
